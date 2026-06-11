@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amethysta&display=swap');
+
+:root {
+  --primary-accent: #002147;
+  /* --secondary-accent: #fbbf24; */
+  --secondary-accent: hsl(40, 95%, 50%);
+  --temp-color: hsl();
+
+  --bg-primary: #fff;
+  --bg-secondary: #f8fafc;
+
+  --text-primary: #002147;
+  --text-on-dark: #ffffff;
+
+  --btn-primary: hsl(40, 95%, 50%);
+  --btn-secondary: hsl(40, 95%, 40%);
+
+  --font-amethysta: "Amethysta", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+
+  --bg-color: var(--bg-primary);
+  --font-default: var(--font-roboto);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-default);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
