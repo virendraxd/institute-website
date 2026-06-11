@@ -42,7 +42,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
 
         try {
             const response = await fetch(
-                "http://localhost:5000/api/admissions",
+                `${import.meta.env.VITE_API_URL}/api/admissions`,
                 {
                     method: "POST",
                     headers: {

@@ -8,7 +8,7 @@ function Leads() {
     const [selectedLead, setSelectedLead] = useState(null)
 
     useEffect(() => {
-        fetch("http://localhost:5000/api/admissions")
+        fetch(`${import.meta.env.VITE_API_URL}/api/admissions`)
             .then(res => res.json())
             .then(data => setLeads(data));
     }, []);
