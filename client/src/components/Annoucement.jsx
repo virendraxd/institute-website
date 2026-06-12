@@ -6,18 +6,18 @@ function Annoucement({ openModal }) {
         <>
             <section
                 id="announcement-bar"
-                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-2 font-semibold border-b border-(--secondary-accent)/20"
+                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-1.5 font-semibold border-b border-(--secondary-accent)/20"
             >
                 <div
                     id="announcement-track"
-                    className="flex w-max items-center whitespace-nowrap"
+                    className="flex w-max items-center text-xs whitespace-nowrap"
                 >
                     {/* ITEM 1 */}
                     <div
                         id="announcement-item-1"
                         className="flex items-center gap-4 pr-8"
                     >
-                        <span className="text-white text-sm tracking-widest font-medium">
+                        <span className="text-white  tracking-widest font-medium">
                             {announcemet.toUpperCase()}
                         </span>
 
@@ -26,7 +26,7 @@ function Annoucement({ openModal }) {
                         </span>
 
                         <button
-                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-sm tracking-wider"
+                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-xs tracking-wider"
                             onClick={() => openModal("apply")}
                         >
                             Apply Now
@@ -47,7 +47,7 @@ function Annoucement({ openModal }) {
                         </span>
 
                         <button
-                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-sm tracking-wider"
+                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-xs tracking-wider"
                             onClick={() => openModal("apply")}
                         >
                             Apply Now
