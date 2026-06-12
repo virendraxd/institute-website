@@ -17,7 +17,6 @@ import EnquiryModal from '../components/EnquiryModal'
 import '../styles/Home.css'
 
 function Home() {
-    const heroRef = useRef(null);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalType, setModalType] = useState("");
@@ -34,54 +33,50 @@ function Home() {
             <Annoucement
                 openModal={openModal}
             />
-            <div className='relative'>
 
-                <Nav
-                    heroRef={heroRef}
+            <Nav
+                openModal={openModal}
+            />
+
+            <Hero
+                openModal={openModal}
+            />
+
+            <Reveal>
+                <About />
+            </Reveal>
+
+            <Reveal>
+                <WhyChooseUs />
+            </Reveal>
+
+            <Reveal>
+                <Courses
                     openModal={openModal}
                 />
+            </Reveal>
 
-                <Hero
-                    heroRef={heroRef}
-                    openModal={openModal}
-                />
+            <Reveal>
+                <Results />
+            </Reveal>
 
-                <Reveal>
-                    <About />
-                </Reveal>
+            <Reveal>
+                <Facilities />
+            </Reveal>
 
-                <Reveal>
-                    <WhyChooseUs />
-                </Reveal>
+            <Reveal>
+                <Testimonials />
+            </Reveal>
 
-                <Reveal>
-                    <Courses
-                        openModal={openModal}
-                    />
-                </Reveal>
+            <Reveal>
+                <Contact />
+            </Reveal>
 
-                <Reveal>
-                    <Results />
-                </Reveal>
+            <FloatingBtn />
 
-                <Reveal>
-                    <Facilities />
-                </Reveal>
-
-                <Reveal>
-                    <Testimonials />
-                </Reveal>
-
-                <Reveal>
-                    <Contact />
-                </Reveal>
-
-                <FloatingBtn />
-
-                <Footer
-                    openModal={openModal}
-                />
-            </div>
+            <Footer
+                openModal={openModal}
+            />
 
             <EnquiryModal
                 isOpen={isModalOpen}

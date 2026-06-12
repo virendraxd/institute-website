@@ -6,7 +6,7 @@ function Annoucement({ openModal }) {
         <>
             <section
                 id="announcement-bar"
-                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-1.5 font-semibold border-b border-(--secondary-accent)/20"
+                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-1.5 sm:p-2 font-semibold border-b border-(--secondary-accent)/20"
             >
                 <div
                     id="announcement-track"

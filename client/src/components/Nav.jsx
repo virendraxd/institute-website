@@ -1,56 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { navLinks } from '../data/navLinks.js'
 
-function Nav({ heroRef, openModal }) {
+function Nav({ openModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [outsideHero, setOutsideHero] = useState(false);
-
-  useEffect(() => {
-    if (!heroRef?.current) return;
-
-    const observer = new IntersectionObserver(
-      ([entries]) => {
-        setOutsideHero(!entries.isIntersecting);
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    observer.observe(heroRef.current);
-
-    return () => observer.disconnect();
-
-  }, [heroRef]);
 
   return (
-    <header className="animate-bounce trns sticky top-0 z-50 w-full h-0 pointer-events-none">
-      <div className="px-[5%] sm:px-[5%] lg:px-[10%] pt-3 sm:pt-4">
+    <header className="absolute inset-x-0 top-0 z-100 w-full">
+      <div className="pt-8 sm:pt-8">
         <nav
-          className={`
-            mx-auto w-full max-w-7xl pointer-events-auto
-            transition-all duration-300 ease-in-out
-            shadow-[0_8px_32px_0_rgba(0,33,71,0.15)]
-            rounded-2xl px-6 md:px-10 py-4
+          className="bg-(--bg-secondary)
+              w-full  
+            px-6 md:px-10 py-4
             flex justify-between items-center
-
-            ${outsideHero
-              ? `
-              bg-slate-950/40 backdrop-blur-xl border border-slate-600 shadow-xl
-              `
-              : `
-              bg-white/10 backdrop-blur-md border border-white/20`
-            } 
-          `}
+             border-b-4 border-b-gray-800"
         >
 
           {/* Logo */}
-          <div className="text-white font-bold text-2xl md:text-3xl font-montserrat tracking-tight">
+          <div className="text-(--primary-accent) font-bold text-2xl md:text-3xl font-montserrat tracking-tight">
             Knight <span className="text-(--secondary-accent)">Academy</span>
           </div>
 
           {/* Desktop Links */}
-          <ul className="hidden lg:flex items-center gap-6 text-white font-medium">
+          <ul className="hidden lg:flex items-center gap-6 text-(--text-primary) font-medium">
 
             {navLinks.map((link) => (
               <li
