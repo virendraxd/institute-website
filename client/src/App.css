@@ -4,10 +4,10 @@
 @import "tailwindcss";
 
 :root {
-  --primary-accent: #002147;
-  /* --secondary-accent: #fbbf24; */
+  --primary-accent: hsl(212, 100%, 14%);
   --secondary-accent: hsl(40, 95%, 50%);
-  --temp-color: hsl();
+  
+  --primary-light: hsl(212, 100%, 18%);
 
   --bg-primary: #fff;
   --bg-secondary: #f8fafc;

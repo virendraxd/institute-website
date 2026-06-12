@@ -5,23 +5,22 @@ function Nav({ openModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="absolute inset-x-0 top-0 z-100 w-full">
-      <div className="pt-8 sm:pt-8">
-        <nav
-          className="bg-(--bg-secondary)
-              w-full  
-            px-6 md:px-10 py-4
+    <header className="fixed inset-x-0 top-0 z-100 w-full">
+        <nav  
+          className=" bg-(--bg-secondary)
+            w-full  
+            px-6 md:px-20 py-2 
             flex justify-between items-center
-             border-b-4 border-b-gray-800"
+            border-slate-300 border-b-3"
         >
 
           {/* Logo */}
-          <div className="text-(--primary-accent) font-bold text-2xl md:text-3xl font-montserrat tracking-tight">
+          <div className="text-(--primary-accent) text-shadow-2xs font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
             Knight <span className="text-(--secondary-accent)">Academy</span>
           </div>
 
           {/* Desktop Links */}
-          <ul className="hidden lg:flex items-center gap-6 text-(--text-primary) font-medium">
+          <ul className="hidden lg:flex items-center gap-8 lg:gap-6 text-(--text-primary) font-medium">
 
             {navLinks.map((link) => (
               <li
@@ -30,12 +29,12 @@ function Nav({ openModal }) {
               >
                 <a
                   href={link.href}
-                  className="hover:text-(--secondary-accent) transition-colors duration-300"
+                  className="hover:text-(--secondary-accent) transition-colors duration-200 text-shadow-xs"
                 >
                   {link.name}
                 </a>
 
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--secondary-accent) transition-all duration-300 group-hover:w-full"></span>
+                {/* <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--secondary-accent) transition-all duration-300 group-hover:w-full"></span> */}
               </li>
             ))}
 
@@ -66,7 +65,7 @@ function Nav({ openModal }) {
           {/* Mobile Dropdown */}
           <div
             className={`
-              absolute top-full right-1 mt-1  lg:hidden 
+              absolute top-full right-1 mt-1 lg:hidden 
               bg-(--primary-accent)/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6
               transition-all duration-300 origin-top max-w-xl
               ${isMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}
@@ -92,7 +91,6 @@ function Nav({ openModal }) {
             </ul>
           </div>
         </nav>
-      </div>
     </header>
   )
 }

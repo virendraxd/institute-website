@@ -6,11 +6,11 @@ function Annoucement({ openModal }) {
         <>
             <section
                 id="announcement-bar"
-                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-1.5 sm:p-2 font-semibold border-b border-(--secondary-accent)/20"
+                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-1.5 sm:p-2 font-semibold border-b border-(--bg-secondary)/38"
             >
                 <div
                     id="announcement-track"
-                    className="flex w-max items-center text-xs whitespace-nowrap"
+                    className="flex w-max items-center text-sm whitespace-nowrap"
                 >
                     {/* ITEM 1 */}
                     <div
@@ -26,7 +26,7 @@ function Annoucement({ openModal }) {
                         </span>
 
                         <button
-                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-xs tracking-wider"
+                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-sm tracking-wider"
                             onClick={() => openModal("apply")}
                         >
                             Apply Now
@@ -47,7 +47,7 @@ function Annoucement({ openModal }) {
                         </span>
 
                         <button
-                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-xs tracking-wider"
+                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-sm tracking-wider"
                             onClick={() => openModal("apply")}
                         >
                             Apply Now

@@ -16,9 +16,9 @@ function Hero({ openModal }) {
     },
 
     {
-      title: "Results That Speak for Themselves",
+      title: "Proven Results",
       subtitle:
-        "Trusted by parents and students for consistent board results and competitive exam success."
+        "Trusted for consistent board results and competitive exam success."
     },
 
     {
@@ -60,35 +60,35 @@ function Hero({ openModal }) {
 
         return next;
       });
-    }, 3000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [slides.length]);
 
   return (
     <section>
-      <ul
-        className="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory"
-        ref={sliderRef}
-      >
-        {slides.map((slide, index) => (
-          <li
-            key={index}
-            className="relative snap-center flex-[0_0_100%] h-screen min-h-150 bg-gray-200"
-          >
-            <img
-              // key={`${current}-content`}
-              src={slideImages[index]}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover animate-hero-image"
-            />
+      <div className="relative">
+        <ul
+          className=" flex overflow-x-hidden scroll-smooth snap-x snap-mandatory"
+          ref={sliderRef}
+        >
+          {slides.map((slide, index) => (
+            <li
+              key={index}
+              className="relative snap-center flex-[0_0_100%] h-auto min-h-142 bg-gray-200"
+            >
+              <img
+                // key={`${current}-content`}
+                src={slideImages[index]}
+                alt=""
+                className="absolute inset-0 w-full h-full  object-cover animate-hero-image"
+              />
 
-            <div className="absolute inset-0 bg-black/40 flex items-center z-10">
-              <div className="pl-3 sm:pl-8 md:pl-12 lg:pl-32">
-                <div>
+              <div className="absolute inset-0 bg-black/40 flex items-center align-middle justify-center z-10">
+                <div className="flex items-center flex-col text-center">
                   <p className="text-(--text-on-dark) font-(family-name:--font-amethysta) 
-                    text-4xl/[0.95] sm:text-5xl md:text-6xl lg:text-8xl   
-                    max-w-75 sm:max-w-100 md:max-w-150 lg:max-w-200 animate-title"
+                    text-4xl/[0.95] sm:text-6xl md:text-6xl lg:text-8xl   
+                    max-w-75 sm:max-w-110 md:max-w-160 lg:max-w-190 animate-title"
                   >
                     {slide.title}
                   </p>
@@ -100,47 +100,47 @@ function Hero({ openModal }) {
                   >
                     {slide.subtitle}
                   </p>
-                </div>
 
-                <div className="flex gap-6 animate-buttons">
-                  <button
-                    className="bg-(--primary-accent) cursor-pointer text-(--text-on-dark) px-6 sm:px-8   border-2 border-(--secondary-accent) hover:bg-(--btn-secondary) hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl
-                      font-semibold lg:font-bold 
-                      rounded-3xl lg:rounded-4xl
+                  <div className="flex gap-6 mt-8 items-center justify-center animate-buttons">
+                    <button
+                      className="bg-(--primary-accent) cursor-pointer text-(--secondary-accent) px-6 sm:px-8 border border-(--bg-secondary) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
+                    rounded-lg transition-colors duration-300 text-shadow-lg
+                    font-semibold lg:font-bold 
                       text-sm lg:text-lg
-                      py-3 sm:py-3 
+                      py-1 sm:py-2 
                     "
-                    onClick={() => openModal("apply")}
-                  >
-                    Apply Now
-                  </button>
+                      onClick={() => openModal("apply")}
+                    >
+                      Apply Now
+                    </button>
 
-                  <button className="bg-transparent cursor-pointer text-(--text-on-dark) px-6 sm:px-8 border-2 border-(--secondary-accent) hover:bg-(--btn-secondary) hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl 
-                  font-semibold lg:font-bold 
-                  rounded-3xl lg:rounded-4xl
-                  text-sm lg:text-lg 
-                  py-3 sm:py-3 
-                  "
-                    onClick={() =>
-                      scrollToSection("#results")
-                    }>
-                    View Results
-                  </button>
+                    <button className="bg-transparent cursor-pointer text-(--secondary-accent) px-6 sm:px-8 border border-(--bg-secondary) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
+                    rounded-lg transition-colors duration-300 text-shadow-lg
+                    font-semibold lg:font-bold 
+                      text-sm lg:text-lg
+                      py-1 sm:py-2 
+                    "
+                      onClick={() =>
+                        scrollToSection("#results")
+                      }>
+                      View Results
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            className={current === index ? "dot active" : "dot"}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+            </li>
+          ))}
+        </ul>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={current === index ? "dot active" : "dot"}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section >
   );

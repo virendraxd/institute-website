@@ -30,17 +30,20 @@ function Home() {
 
     return (
         <>
-            <Annoucement
-                openModal={openModal}
-            />
 
             <Nav
                 openModal={openModal}
             />
 
-            <Hero
-                openModal={openModal}
-            />
+            <div className="pt-14.5 lg:pt-16">
+                <Annoucement
+                    openModal={openModal}
+                />
+
+                <Hero
+                    openModal={openModal}
+                />
+            </div>
 
             <Reveal>
                 <About />
