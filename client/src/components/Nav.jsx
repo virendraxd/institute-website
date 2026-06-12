@@ -51,7 +51,7 @@ function Nav({ openModal }) {
 
           {/* Mobile Hamburger */}
           <button
-            className="lg:hidden text-white p-1 focus:outline-none"
+            className="lg:hidden text-(--text-primary) p-1 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,7 +66,7 @@ function Nav({ openModal }) {
           {/* Mobile Dropdown */}
           <div
             className={`
-              absolute top-full  right-0 mt-4  lg:hidden 
+              absolute top-full right-1 mt-1  lg:hidden 
               bg-(--primary-accent)/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6
               transition-all duration-300 origin-top max-w-xl
               ${isMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}
