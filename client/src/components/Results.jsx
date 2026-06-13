@@ -25,16 +25,54 @@ function Results() {
     (a, b) => parseFloat(b.marks) - parseFloat(a.marks)
   );
 
-  const resultStats = [
-    { label: "Pass Rate", value: 98, suffix: "%" },
-    { label: "Students", value: 450, suffix: "+" },
-    { label: "Distinctions", value: 120, suffix: "+" },
-    { label: "School Toppers", value: 15, suffix: "+" }
-  ]
+  const calcStats = () => {
+    const totalStudents = students.length;
+
+    const avgMarks = totalStudents > 0
+      ? students.reduce(
+          (sum, student) => sum + parseFloat(student.marks),
+          0
+        ) / totalStudents
+      : 0;
+
+    const distinctions = students.filter(
+      student => parseFloat(student.marks) >= 80
+    ).length;
+
+    const toppers = students.filter(
+      student => parseFloat(student.marks) >= 95
+    ).length;
+
+    return [
+      {
+        label: "Average Score",
+        value: avgMarks.toFixed(1),
+        suffix: "%"
+      },
+      {
+        label: "Students",
+        value: totalStudents,
+        suffix: "+"
+      },
+      {
+        label: "Distinctions",
+        value: distinctions,
+        suffix: "+"
+      },
+      {
+        label: "Top Performers",
+        value: toppers,
+        suffix: "+"
+      }
+    ];
+  };
+
+  const resultStats = calcStats();
 
   return (
     <section id="results" className="section-padding bg-(--bg-secondary)">
       <h2 className="section-heading">Results & Achievements</h2>
+
       <Divider />
 
       {/* Filter Controls */}
@@ -64,6 +102,7 @@ function Results() {
           </select>
         </div>
       </div>
+
       {/* Student Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
         {sortedStudents.map((student) => (
@@ -96,26 +135,26 @@ function Results() {
       </div>
 
       {/* Stats Section */}
-      <div className="mt-20 bg-white px-2 py-8 sm:p-20 lg:p-10">
-        <h3 className="text-center opacity-[0.87] font-bold text-2xl sm:text-3xl md:text-4xl text-(--primary-accent) mb-12">
-          Batch {year} Overview
+      <div 
+        key={`${year}-${selectedClass}`}
+        className="mt-20 bg-white px-2 py-8 sm:p-20 lg:p-10"
+      >
+        <h3 className="text-center opacity-[0.87] font-bold text-2xl sm:text-3xl md:text-4xl text-(--primary-accent) mb-12 uppercase">
+          Batch {year} - Class {selectedClass} Overview
         </h3>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-          {resultStats.map((stat, i) => {
-            const statMaxValue = stat.value;
+          {resultStats.map((stat, i) => (
+            <div key={i} className="bg-(--bg-secondary) p-2 sm:p-4 md:p-6 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 text-center hover:border-(--secondary-accent) transition-colors group flex flex-col justify-center">
+              <h3 className="text-4xl md:text-5xl font-black text-(--primary-accent) mb-2 ">
+                <AnimateCounter end={Number(stat.value)} suffix={stat.suffix} />
+              </h3>
 
-            return (
-              <div key={i} className="bg-(--bg-secondary) p-2 sm:p-4 md:p-6 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 text-center hover:border-(--secondary-accent) transition-colors group flex flex-col justify-center">
-                <h3 className="text-4xl md:text-5xl font-black text-(--primary-accent) mb-2 ">
-                  <AnimateCounter end={statMaxValue} suffix={stat.suffix} />
-                </h3>
-
-                <p className="text-sm md:text-base text-gray-400 font-bold uppercase tracking-widest">
-                  {stat.label}
-                </p>
-              </div>)
-          })}
+              <p className="text-sm md:text-base text-gray-400 font-bold uppercase tracking-widest">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

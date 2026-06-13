@@ -5,8 +5,8 @@ export const results = {
             { image: "/students/student2.jpg", name: "Ananya Verma", marks: "97.8%" },
             { image: "/students/student3.jpg", name: "Rahul Singh", marks: "97.5%" },
             { image: "/students/student4.jpg", name: "Sneha Kapoor", marks: "97.2%" },
-            { image: "/students/student5.jpg", name: "Arjun Mehta", marks: "96.9%" },
-            { image: "/students/student6.jpg", name: "Ishani Gupta", marks: "96.5%" }
+            { image: "/students/student5.jpg", name: "Arjun Mehta", marks: "84.9%" },
+            { image: "/students/student6.jpg", name: "Ishani Gupta", marks: "78.5%" }
         ],
         "12th": [
             { image: "/students/student7.jpg", name: "Vikram Malhotra", marks: "97.2%" },
@@ -16,9 +16,9 @@ export const results = {
             { image: "/students/student11.jpg", name: "Kabir Das", marks: "96.2%" },
             { image: "/students/student12.jpg", name: "Priya Patel", marks: "96.0%" },
             { image: "/students/student13.jpg", name: "Aditya Joshi", marks: "95.8%" },
-            { image: "/students/student14.jpg", name: "Riya Sen", marks: "95.5%" },
-            { image: "/students/student15.jpg", name: "Siddharth Jain", marks: "95.2%" },
-            { image: "/students/student16.jpg", name: "Tara Kapoor", marks: "95.0%" }
+            { image: "/students/student14.jpg", name: "Riya Sen", marks: "85.5%" },
+            { image: "/students/student15.jpg", name: "Siddharth Jain", marks: "83.2%" },
+            { image: "/students/student16.jpg", name: "Tara Kapoor", marks: "78.0%" }
         ]
     },
 
@@ -28,8 +28,8 @@ export const results = {
             { image: "/students/student18.jpg", name: "Siya Mishra", marks: "97.6%" },
             { image: "/students/student19.jpg", name: "Arjun Reddy", marks: "97.2%" },
             { image: "/students/student20.jpg", name: "Meera Nair", marks: "97.0%" },
-            { image: "/students/student21.jpg", name: "Kabir Das", marks: "96.8%" },
-            { image: "/students/student22.jpg", name: "Ananya Panday", marks: "96.5%" }
+            { image: "/students/student21.jpg", name: "Kabir Das", marks: "94.8%" },
+            { image: "/students/student22.jpg", name: "Ananya Panday", marks: "79.5%" }
         ],
         "12th": [
             { image: "/students/student23.jpg", name: "Diya Roy", marks: "96.2%" },
@@ -37,7 +37,7 @@ export const results = {
             { image: "/students/student25.jpg", name: "Riya Sen", marks: "95.8%" },
             { image: "/students/student26.jpg", name: "Siddharth Jain", marks: "95.5%" },
             { image: "/students/student27.jpg", name: "Tara Kapoor", marks: "95.2%" },
-            { image: "/students/student28.jpg", name: "Rohan Bose", marks: "95.0%" }
+            { image: "/students/student28.jpg", name: "Rohan Bose", marks: "89.0%" }
         ]
     },
 
@@ -82,8 +82,8 @@ export const results = {
             { image: "/students/student58.jpg", name: "Jim Sarbh", marks: "94.8%" }
         ],
         "12th": [
-            { image: "/students/student59.jpg", name: "Jaideep Ahlawat", marks: "94.5%" },
-            { image: "/students/student60.jpg", name: "Vijay Varma", marks: "94.2%" },
+            { image: "/students/student59.jpg", name: "Jaideep Ahlawat", marks: "95.5%" },
+            { image: "/students/student60.jpg", name: "Vijay Varma", marks: "95.2%" },
             { image: "/students/student61.jpg", name: "Shefali Shah", marks: "94.0%" },
             { image: "/students/student62.jpg", name: "Manoj Bajpayee", marks: "93.8%" },
             { image: "/students/student63.jpg", name: "Kay Kay Menon", marks: "93.5%" },
