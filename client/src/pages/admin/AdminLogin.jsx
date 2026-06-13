@@ -39,11 +39,11 @@ function AdminLogin() {
 
     return (
         <>
-            <section className=" flex flex-col items-center justify-center">
+            <section className="section-padding bg-(--bg-secondary) flex flex-col items-center justify-center">
 
-                <h1 className="text-6xl text-center">Admin Login</h1>
+                <h1 className="section-heading text-5xl sm:text-6xl text-center mb-12">Admin Login</h1>
 
-                <div className="flex flex-col justify-between items-center mt-4 w-110 h-76 border-2 rounded-2xl bg-gray-700 px-8 py-12">
+                <div className="flex flex-col justify-between items-center sm:w-110 gap-10 sm:gap-12 border-2 rounded-2xl border-blue-950 bg-black px-6 sm:px-8 py-10 sm:py-12">
 
                     <div className="space-y-6">
 
@@ -52,7 +52,7 @@ function AdminLogin() {
                             placeholder="Username"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            className="border-2 rounded-lg px-4 py-2 bg-gray-600 border-gray-500 text-white w-full"
+                            className="border rounded-lg px-4 py-2 bg-[#0A0A0A] border-gray-600 text-white w-full"
                         />
 
                         <input
@@ -60,13 +60,12 @@ function AdminLogin() {
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="border-2 rounded-lg px-4 py-2 bg-gray-600 border-gray-500 text-white w-full"
+                            className="border rounded-lg px-4 py-2 bg-[#0A0A0A] border-gray-600 text-white w-full"
                         />
                     </div>
 
                     <button
-                        onClick={handleLogin} className="border-2 rounded-lg px-4 py-2 bg-gray-600 border-gray-500 text-white w-full"
-                        className="border-2 rounded-lg px-4 py-2 bg-gray-800 border-gray-500 text-white w-fit cursor-pointer"
+                        onClick={handleLogin} className="border-2 rounded-lg px-4 py-2 bg-[#0A0A0A] border-gray-600 text-white hover:text-white/80 w-full cursor-pointer"
                     >
                         Log in
                     </button>
