@@ -1,6 +1,7 @@
 import React from 'react'
 import { data, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import Navbar from './Header'
 
 function AdminLogin() {
     const navigate = useNavigate();
@@ -39,6 +40,8 @@ function AdminLogin() {
 
     return (
         <>
+            <Navbar />
+
             <section className="section-padding bg-(--bg-secondary) flex flex-col items-center justify-center">
 
                 <h1 className="section-heading text-5xl sm:text-6xl text-center mb-12">Admin Login</h1>

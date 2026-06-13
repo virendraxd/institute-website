@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import '../../styles/Home.css'
 import '../../App.css'
+import Navbar from './Header'
 
 function Leads() {
     const [leads, setLeads] = useState([])
@@ -25,8 +26,20 @@ function Leads() {
         ["Message", selectedLead?.message],
     ];
 
+    const [btnState, setBtnState] = useState(null);
+
+    const changeInnerText = (lead) => {
+        setBtnState(lead._id);
+
+        setTimeout(() => {
+            setBtnState(null);
+        }, 8000);
+    };
+
     return (
         <>
+            <Navbar />
+            
             <section className='px-2 py-8 sm:px-12 sm:y-16 bg-(--bg-secondary)'>
                 <h2 className='section-heading'>Leads</h2>
 
@@ -42,7 +55,7 @@ function Leads() {
                                     <th className="px-6 py-4 text-left font-semibold">Contact</th>
                                     <th className="px-6 py-4 text-left font-semibold">Status</th>
                                     <th className="px-6 py-4 text-left font-semibold">Date</th>
-                                    <th className="px-6 py-4 text-left font-semibold">Action</th>
+                                    <th className="px-6 py-4 font-semibold">Action</th>
                                 </tr>
                             </thead>
 
@@ -64,12 +77,18 @@ function Leads() {
 
                                         <td className="px-6 py-4">{new Date(lead.createdAt).toLocaleDateString()}</td>
 
-                                        <td className="px-6 py-4 text-left">
+                                        <td className="px-6 py-4 text-center">
                                             <button
-                                                className="px-6 py-3 rounded-lg bg-(--primary-accent) text-white hover:text-white/80 cursor-pointer hover:bg-(--primary-light) hover:scale"
-                                                onClick={() => setSelectedLead(lead)}
+                                                className="py-3 w-24 rounded-lg bg-(--primary-accent) text-white hover:text-white/80 cursor-pointer hover:bg-(--primary-light) hover:scale"
+                                                onClick={() => {
+                                                    setSelectedLead(lead);
+                                                    changeInnerText(lead);
+                                                }}
                                             >
-                                                View
+                                                {btnState === lead._id
+                                                    ? "Fetched"
+                                                    : "View"
+                                                }
                                             </button>
                                         </td>
                                     </tr>
@@ -79,7 +98,7 @@ function Leads() {
                     </div>
 
                     {/* Sidebar */}
-                    <aside className="w-full xl:w-96 shrink-0 flex flex-col justify-center items-center align-middle">
+                    <aside className="w-full xl:w-96 shrink-0 flex flex-col justify-center sm:justify-start items-center align-middle">
                         <div className="sticky top-6  bg-(--bg-color) px-4 sm:px-6 py-6 sm:py-8 w-full sm:max-w-md border-2 border-gray-200 shadow-sm">
                             <h3 className="text-center font-bold text-2xl">Student Info</h3>
 
@@ -95,8 +114,8 @@ function Leads() {
                                 <tbody>
                                     {leadFields.map(([label, value]) => (
                                         <tr key={label}>
-                                            <th className="text-left px-4 py-2 font-semibold">{label}</th>
-                                            <td>{value || "-"}</td>
+                                            <th className="px-4 py-2 text-left font-semibold">{label}</th>
+                                            <td className="text-left" >{value || "-"}</td>
                                         </tr>
                                     ))}
 
