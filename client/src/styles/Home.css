@@ -147,10 +147,12 @@
 @keyframes heroFade {
   from {
     opacity: 0;
+    transform: scale(0.99);
   }
 
   to {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
@@ -158,10 +160,34 @@
   animation: heroFade 1s ease-out;
 }
 
-@keyframes fadeLeft {
+@keyframes fadeDown {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeFront {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
 
   to {
@@ -172,15 +198,15 @@
 
 .animate-title {
   opacity: 0;
-  animation: fadeLeft 0.8s ease-out forwards;
+  animation: fadeDown 0.8s ease-out forwards;
 }
 
 .animate-subtitle {
   opacity: 0;
-  animation: fadeLeft 0.8s ease-out 0.2s forwards;
+  animation: fadeFront 0.8s ease-out 0.2s forwards;
 }
 
 .animate-buttons {
   opacity: 0;
-  animation: fadeLeft 0.8s ease-out 0.4s forwards;
+  animation: fadeUp 0.8s ease-out 0.4s forwards;
 }
