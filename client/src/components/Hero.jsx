@@ -103,22 +103,22 @@ function Hero({ openModal }) {
 
                   <div className="flex gap-6 mt-8 items-center justify-center animate-buttons">
                     <button
-                      className="bg-(--primary-accent) cursor-pointer text-(--secondary-accent) px-6 sm:px-8 border border-(--bg-secondary) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
+                      className="bg-(--primary-accent) cursor-pointer text-(--text-on-dark) px-6 sm:px-8 border border-(--secondary-accent) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
                     rounded-lg transition-colors duration-300 text-shadow-lg
                     font-semibold lg:font-bold 
                       text-sm lg:text-lg
-                      py-1 sm:py-2 
+                      py-2 sm:py-3 
                     "
                       onClick={() => openModal("apply")}
                     >
                       Apply Now
                     </button>
 
-                    <button className="bg-transparent cursor-pointer text-(--secondary-accent) px-6 sm:px-8 border border-(--bg-secondary) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
+                    <button className="bg-transparent cursor-pointer text-(--text-on-dark) px-6 sm:px-8 border border-(--secondary-accent) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
                     rounded-lg transition-colors duration-300 text-shadow-lg
                     font-semibold lg:font-bold 
                       text-sm lg:text-lg
-                      py-1 sm:py-2 
+                      py-2 sm:py-3 
                     "
                       onClick={() =>
                         scrollToSection("#results")
