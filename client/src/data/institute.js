@@ -16,6 +16,62 @@ export const announcemet = "Admission open for 2026-2027 academic batches"
 
 export const courses = [
     {
+        id: "class10",
+        title: "Class 10 Board",
+        target: "CBSE & State Boards",
+        subjects: ["Mathematics", "Science", "English", "Social Science"],
+        duration: "1 Year",
+        batchTiming: [
+            "Evening Batch: 4:00 PM - 6:30 PM",
+        ],
+        features: [
+            "Foundation Building",
+            "NTSE & Olympiad Support",
+            "Regular Assessment",
+            "Interactive Learning"
+        ],
+        description:
+            "Strong academic foundation and board-focused preparation.",
+    },
+    {
+        id: "class11",
+        title: "Class 11 Board",
+        target: "CBSE & State Boards",
+        subjects: ["Physics", "Chemistry", "Mathematics", "Biology"],
+        duration: "1 Year",
+        batchTiming: [
+            "Morning Batch: 8:00 AM - 10:00 AM",
+            "Evening Batch: 4:00 PM - 6:00 PM"
+        ],
+        features: [
+            "Strong Concept Foundation",
+            "Regular Chapter-wise Tests",
+            "Entrance-aligned Basics",
+            "Dedicated Doubt Clearing"
+        ],
+        description:
+            "Building a solid conceptual foundation for senior secondary education and future competitive exams.",
+    },
+    {
+        id: "class12",
+        title: "Class 12 Board",
+        target: "CBSE & State Boards",
+        subjects: ["Physics", "Chemistry", "Mathematics", "Biology"],
+        duration: "1 Year",
+        batchTiming: [
+            "First Batch: 3:00 PM - 5:00 PM",
+            "Second Batch: 5:00 PM - 7:00 PM"
+        ],
+        features: [
+            "Board Pattern Mock Tests",
+            "Previous Year Questions",
+            "Syllabus Completion by November",
+            "One-to-One Doubt Support"
+        ],
+        description:
+            "Complete board exam preparation with concept-based learning and revision programs.",
+    },
+    {
         id: "jee",
         title: "JEE Preparation",
         target: "Class 11, 12 & Dropper",
@@ -61,43 +117,6 @@ export const courses = [
         ],
         description:
             "Focused preparation for NEET with expert faculty and structured test series.",
-    },
-    {
-        id: "class12",
-        title: "Class 12 Board",
-        target: "CBSE & State Boards",
-        subjects: ["Physics", "Chemistry", "Mathematics", "Biology"],
-        duration: "1 Year",
-        batchTiming: [
-            "First Batch: 3:00 PM - 5:00 PM",
-            "Second Batch: 5:00 PM - 7:00 PM"
-        ],
-        features: [
-            "Board Pattern Mock Tests",
-            "Previous Year Questions",
-            "Syllabus Completion by November",
-            "One-to-One Doubt Support"
-        ],
-        description:
-            "Complete board exam preparation with concept-based learning and revision programs.",
-    },
-    {
-        id: "class10",
-        title: "Class 10 Board",
-        target: "CBSE & State Boards",
-        subjects: ["Mathematics", "Science", "English", "Social Science"],
-        duration: "1 Year",
-        batchTiming: [
-            "Evening Batch: 4:00 PM - 6:30 PM",
-        ],
-        features: [
-            "Foundation Building",
-            "NTSE & Olympiad Support",
-            "Regular Assessment",
-            "Interactive Learning"
-        ],
-        description:
-            "Strong academic foundation and board-focused preparation.",
     },
 ];
 

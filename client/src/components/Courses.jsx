@@ -12,7 +12,7 @@ function Courses({ openModal }) {
       <h2 className="section-heading">Courses Offered</h2>
       <Divider />
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
         {
           courses.map((course) => (
             <article
@@ -160,12 +160,6 @@ function Courses({ openModal }) {
                   onClick={() => {
                     openModal("enroll", selectedCourse);
                     setSelectedCourse(null);
-
-                    // setFormData(prev => ({
-                    //   ...prev,
-                    //   course: course.title,
-                    //   batchTiming: course.batchTiming?.join(", ") || ""
-                    // }));
                   }}
                   className="
                 bg-(--primary-accent)
@@ -183,7 +177,7 @@ function Courses({ openModal }) {
                   Enroll Now
                 </button>
 
-                <button F
+                <button
                   onClick={() => {
                     openModal("demo")
                     setSelectedCourse(null)

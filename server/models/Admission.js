@@ -38,6 +38,12 @@ const admissionSchema = new mongoose.Schema(
             type: String,
         },
 
+        formType: {
+            type: String,
+            required: true,
+            default: "enquiry"
+        },
+
         status: {
             type: String,
             enum: ["new", "contacted", "admitted"],
