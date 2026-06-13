@@ -14,7 +14,7 @@ function WhyChooseUs() {
           features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col justify-center items-center px-4 py-6 sm:px-6 sm:py-8 bg-(--bg-primary) rounded-2xl border border-gray-100 hover:border-(--secondary-accent) hover:shadow-xl transition-all duration-300 group"
+              className="shadow-sm flex flex-col justify-center items-center px-4 py-6 sm:px-6 sm:py-8 bg-(--bg-primary) rounded-2xl border border-gray-100 hover:border-(--secondary-accent) hover:shadow-xl transition-all duration-300 group"
             >
               <div className="w-14 h-14 flex justify-center items-center bg-(--bg-secondary) rounded-xl mb-6 group-hover:bg-(--secondary-accent) transition-colors duration-300">
                 <svg

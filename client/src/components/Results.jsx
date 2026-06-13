@@ -108,7 +108,7 @@ function Results() {
         {sortedStudents.map((student) => (
           <div
             key={student.image}
-            className="bg-white overflow-hidden border rounded-xl border-(--secondary-accent)"
+            className="shadow-sm bg-white overflow-hidden border rounded-xl border-(--secondary-accent)"
           >
             <div className="relative overflow-hidden aspect-square">
               <img
@@ -137,7 +137,7 @@ function Results() {
       {/* Stats Section */}
       <div 
         key={`${year}-${selectedClass}`}
-        className="mt-20 bg-white px-2 py-8 sm:p-20 lg:p-10"
+        className="mt-20 px-2 py-8 sm:p-20 lg:p-10"
       >
         <h3 className="text-center opacity-[0.87] font-bold text-2xl sm:text-3xl md:text-4xl text-(--primary-accent) mb-12 uppercase">
           Batch {year} - Class {selectedClass} Overview
@@ -145,7 +145,7 @@ function Results() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {resultStats.map((stat, i) => (
-            <div key={i} className="bg-(--bg-secondary) p-2 sm:p-4 md:p-6 rounded-2xl sm:rounded-3xl shadow-sm border border-gray-100 text-center hover:border-(--secondary-accent) transition-colors group flex flex-col justify-center">
+            <div key={i} className="shadow-md bg-(--bg-primary) p-2 sm:p-4 md:p-6 rounded-2xl sm:rounded-3xl border border-gray-100 text-center hover:border-(--secondary-accent) transition-colors group flex flex-col justify-center">
               <h3 className="text-4xl md:text-5xl font-black text-(--primary-accent) mb-2 ">
                 <AnimateCounter end={Number(stat.value)} suffix={stat.suffix} />
               </h3>

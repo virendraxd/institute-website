@@ -78,13 +78,12 @@ function Hero({ openModal }) {
               className="relative snap-center flex-[0_0_100%] h-auto min-h-142 bg-gray-200"
             >
               <img
-                // key={`${current}-content`}
                 src={slideImages[index]}
                 alt=""
                 className="absolute inset-0 w-full h-full  object-cover animate-hero-image"
               />
 
-              <div className="absolute inset-0 bg-black/40 flex items-center align-middle justify-center z-10">
+              <div className="absolute inset-0 bg-black/25 flex items-center align-middle justify-center z-10">
                 <div className="flex items-center flex-col text-center">
                   <p className="text-(--text-on-dark) font-(family-name:--font-amethysta) 
                     text-4xl/[0.95] sm:text-6xl md:text-6xl lg:text-8xl   
@@ -93,7 +92,7 @@ function Hero({ openModal }) {
                     {slide.title}
                   </p>
 
-                  <p className="text-(--text-on-dark)/70 font-(family-name:--font-roboto) 
+                  <p className="text-(--text-on-dark)/80 font-(family-name:--font-roboto) 
                     text-base md:text-xl  
                     max-w-60 sm:max-w-75 md:max-w-100 lg:max-w-150
                     my-6 animate-subtitle"

@@ -42,7 +42,7 @@ function About() {
 
           <div>
             <div className="stats-grid grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 text-center">
-              <div className="stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
+              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
                 <h3 className="text-4xl sm:text-5xl font-bold text-(--primary-accent)">
                   <AnimatedCounter end={15} suffix="+" />
                 </h3>
@@ -50,7 +50,7 @@ function About() {
                 <p className="text-sm md:text-base lg:text-lg text-gray-500 uppercase tracking-wider font-semibold">Years Experience</p>
               </div>
 
-              <div className="stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
+              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
                 <h3 className="text-4xl sm:text-5xl font-bold text-(--primary-accent)">
                   <AnimatedCounter end={1200} duration={1} suffix="+" />
                 </h3>
@@ -58,7 +58,7 @@ function About() {
                 <p className="text-sm md:text-base lg:text-lg text-gray-500 uppercase tracking-wider font-semibold">Students Trained</p>
               </div>
 
-              <div className="stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
+              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
                 <h3 className="text-4xl sm:text-5xl font-bold text-(--primary-accent)">
                   <AnimatedCounter end={200} suffix="+" />
                 </h3>
