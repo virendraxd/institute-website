@@ -33,10 +33,75 @@ function Leads() {
 
         setTimeout(() => {
             setBtnState(null);
-        }, 8000);
+        }, 3000);
     };
 
     const [visibleLeads, setVisibleLeads] = useState(10);
+    const noLeadSelected = selectedLead === null;
+
+    const updateStatus = async (status) => {
+        if (!selectedLead) return;
+
+        try {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/admissions/${selectedLead._id}/status`,
+                {
+                    method: "PATCH",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ status }),
+
+                });
+
+            const result = await res.json();
+
+            if (result.success) {
+                setSelectedLead(result.data);
+
+                setLeads((prev) =>
+                    prev.map((lead) =>
+                        lead._id === result.data._id
+                            ? result.data
+                            : lead
+                    )
+                );
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const deleteLead = async () => {
+        if (!selectedLead) return;
+
+        const confirmed = window.confirm(`Delete ${selectedLead.name}'s lead?`);
+
+        if (!confirmed) return;
+
+        try {
+            await fetch(`${import.meta.env.VITE_API_URL}/api/admissions/${selectedLead._id}`,
+                {
+                    method: "DELETE",
+                }
+            );
+
+            setLeads((prev) =>
+                prev.filter(
+                    (lead) => lead._id !== selectedLead._id
+                )
+            );
+
+            setSelectedLead(null);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const statusColors = {
+        new: "bg-fuchsia-100 text-fuchsia-700",
+        contacted: "bg-yellow-100 text-yellow-700",
+        admitted: "bg-green-100 text-green-700",
+    };
 
     return (
         <>
@@ -75,7 +140,11 @@ function Leads() {
                                             <td className="px-3 sm:px-6 py-2 sm:py-4">{lead.phone}</td>
 
                                             <td className="px-3 sm:px-6 py-2 sm:py-4">
-                                                <span className="px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-700">
+                                                <span className={`px-3 py-1 rounded-full text-sm font-medium
+                                                    ${statusColors[lead.status] ||
+                                                    "bg-gray-100 text-gray-700"
+                                                    }`}
+                                                >
                                                     {lead.status}
                                                 </span>
                                             </td>
@@ -134,12 +203,15 @@ function Leads() {
                                     <thead className="bg-blue-100 border-b-2 border-gray-400">
                                         <tr>
                                             <th colSpan="2" className="text-left px-4 py-2 font-bold">
-                                                {selectedLead?.name || "Select a Lead"}
+                                                {selectedLead?.name || "Select a Lead First"}
                                             </th>
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody className={
+                                        noLeadSelected ? "opacity-40" : ""
+                                    }
+                                    >
                                         {leadFields.map(([label, value]) => (
                                             <tr key={label}>
                                                 <th className="px-4 py-2 text-left font-semibold">{label}</th>
@@ -150,7 +222,12 @@ function Leads() {
                                     </tbody>
                                 </table>
 
-                                <div className="grid grid-cols-2 gap-3 mt-6">
+                                <div className={`grid grid-cols-2 gap-3 mt-6
+                                        ${noLeadSelected
+                                        ? "opacity-40 pointer-events-none"
+                                        : ""
+                                    }`}
+                                >
                                     <a
                                         href={`https://wa.me/${selectedLead?.phone}`}
                                         target="_blank"
@@ -161,18 +238,27 @@ function Leads() {
                                     </a>
 
                                     <button
+                                        onClick={() => updateStatus("contacted")}
                                         className="flex-1 bg-yellow-500 text-white py-2 rounded-lg cursor-pointer"
                                     >
-                                        Mark Contacted
+                                        {selectedLead?.status === "Contacted"
+                                            ? "✓ Contacted"
+                                            : "Mark Contacted"
+                                        }
                                     </button>
 
                                     <button
+                                        onClick={() => updateStatus("admitted")}
                                         className="flex-1 bg-blue-500 text-white py-2 rounded-lg cursor-pointer"
                                     >
-                                        Mark Admitted
+                                        {selectedLead?.status === "Admitted"
+                                            ? "✓ Admitted"
+                                            : "Mark Admitted"
+                                        }
                                     </button>
 
                                     <button
+                                        onClick={deleteLead}
                                         className="flex-1 bg-red-600 text-white py-2 rounded-lg cursor-pointer"
                                     >
                                         Delete
