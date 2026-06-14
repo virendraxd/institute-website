@@ -12,25 +12,25 @@ function Courses({ openModal }) {
       <h2 className="section-heading">Courses Offered</h2>
       <Divider />
 
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10 xl:gap-8">
         {
           courses.map((course) => (
             <article
               id={course.id}
               key={course.title}
-              className="bg-(--bg-secondary) rounded-3xl px-4 py-6 sm:px-8 sm:py-10 md:px-12 md:py-16 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
+              className="bg-(--bg-secondary) rounded-3xl px-4 py-6 sm:px-8 sm:py-10 md:px-6 md:py-8 lg:px-4 lg:py-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
             >
               <div className="">
-                <h3 className="text-[28px] font-semibold text-center sm:text-3xl lg:text-4xl mb-5 font-(family-name:--font-amethysta) text-(--primary-accent)" >
+                <h3 className="text-[28px] font-semibold text-center sm:text-3xl lg:text-4xl mb-6 font-(family-name:--font-amethysta) text-(--primary-accent)" >
                   {course.title}
                 </h3>
 
-                <p className="text-base sm:text-xl  text-gray-400 mb-6 flex items-center gap-2 ">
+                <p className="text-base sm:text-xl text-gray-400 mb-5 flex items-center gap-2 ">
                   <span className="w-6 h-0.5 bg-(--secondary-accent)"></span>
                   {course.target}
                 </p>
 
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 mb-6">
                   {
                     course.subjects.map(subject => (
                       <li key={subject} className="text-lg/[0.1]  font-semibold md:text-xl text-gray-600 flex items-center gap-3 ">
