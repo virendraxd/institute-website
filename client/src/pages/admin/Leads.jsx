@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import '../../styles/Home.css'
 import '../../App.css'
-import Navbar from './Header'
+import Navbar from '../../components/admin/Header'
 
 function Leads() {
     const [leads, setLeads] = useState([])

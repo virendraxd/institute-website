@@ -1,7 +1,7 @@
 import React from 'react'
 import { data, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import Navbar from './Header'
+import Navbar from '../../components/admin/Header'
 
 function AdminLogin() {
     const navigate = useNavigate();

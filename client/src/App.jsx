@@ -4,9 +4,8 @@ import './App.css'
 
 import Home from './pages/Home'
 import AdminLogin from './pages/admin/AdminLogin'
-// import Dashboard from './pages/admin/Dashboard'
 import Leads from './pages/admin/Leads'
-import ProtectedRoute from './pages/admin/ProtectedRoute'
+import ProtectedRoute from './components/admin/ProtectedRoute'
 
 
 function App() {
