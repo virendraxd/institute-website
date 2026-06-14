@@ -19,10 +19,10 @@ function Header() {
 
     return (
         <>
-            <header className="flex px-8 py-2 gap-4 border-b border-gray-200">
+            <header className="flex px-4 sm:px-8 py-2 gap-4 border-b border-gray-200">
                 <ul>
                     <li>
-                        <Link to="/" className="hover:text-(--primary-accent)">Home</Link>
+                        <Link to="/" className="font-semibold hover:text-(--secondary-accent) hover:text-shadow-sm" >Home</Link>
                     </li>
                 </ul>
 
@@ -30,7 +30,9 @@ function Header() {
                     <>
                         <p>/</p>
 
-                        <button onClick={handleLogout}>
+                        <button 
+                        onClick={handleLogout}
+                        className="font-semibold hover:text-red-700 hover:text-shadow-sm cursor-pointer">
                             Logout
                         </button>
                     </>
