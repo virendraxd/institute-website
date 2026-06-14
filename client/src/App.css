@@ -5,7 +5,7 @@
 
 :root {
   --primary-accent: hsl(212, 100%, 14%);
-  --secondary-accent: hsl(40, 95%, 50%);
+  --secondary-accent: hsl(42, 90%, 58%);
   
   --primary-light: hsl(212, 100%, 18%);
 
@@ -15,8 +15,8 @@
   --text-primary: #002147;
   --text-on-dark: #ffffff;
 
-  --btn-primary: hsl(40, 95%, 50%);
-  --btn-secondary: hsl(40, 95%, 40%);
+  --btn-primary: hsl(42, 90%, 58%);
+  --btn-secondary: hsl(42, 90%, 48%);
 
   --font-amethysta: "Amethysta", serif;
   --font-montserrat: "Montserrat", sans-serif;
