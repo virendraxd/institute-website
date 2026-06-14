@@ -21,21 +21,21 @@ function About() {
         <Divider />
 
         <div className="flex flex-col mt-12 gap-12 lg:gap-18 ">
-          <div className="flex flex-col lg:flex-row justify-around gap-4 lg:gap-8">
-            <div className="flex flex-col justify-center gap-2"> 
-              <p className="font-(family-name:--font-amethysta) text-4xl md:text-4xl leading-tight text-(--primary-accent)">
+          <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-12 md:h-96  ">
+            <div className="flex flex-col justify-center gap-2 md:max-w-96 lg:max-w-md xl:max-w-148"> 
+              <p className="font-(family-name:--font-amethysta) text-3xl xl:text-4xl leading-tight text-(--primary-accent)">
                 {instituteData[0].tagline}
               </p>
 
-              <p className="text-lg sm:text-1xl text-gray-600 mt-6">
+              <p className="text-lg sm:text-xl xl:text-2xl text-gray-600 mt-6">
                 {instituteData[0].description.replace('{name}', instituteData[0].name)}
               </p>
             </div>
 
-            <div className="flex">
+            <div className="flex justify-center items-center">
               <img
                 src={instituteData[0].image} alt="teacher-image"
-                className="rounded-2xl w-full lg:w-540  max-h-128 object-cover shadow-xl mt-8 lg:mt-0 border-2 border-(--secondary-accent)"
+                className="rounded-2xl w-auto h-auto max-w-full  lg:h-64 lg:w-124 shadow-xl mt-8 lg:mt-0 border-2 border-(--secondary-accent)"
               />
             </div>
           </div>
