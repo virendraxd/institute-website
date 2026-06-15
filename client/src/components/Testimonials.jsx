@@ -4,7 +4,7 @@ import Divider from './Divider'
 
 function Testimonials() {
   return (
-    <section className="section-padding bg-(--bg-secondary)">
+    <section className="section-padding bg-(--bg-primary)">
       <h2 className="section-heading">Testimonials</h2>
       
       <Divider />
@@ -13,7 +13,7 @@ function Testimonials() {
         {testimonials.map((testimonial, index) => (
           <div 
             key={index} 
-            className="bg-white p-8 rounded-2xl shadow-md flex flex-col justify-between"
+            className="bg-(--bg-secondary) p-8 rounded-2xl shadow-md flex flex-col justify-between"
           >
             <div>
               <div className="flex gap-1 mb-4">

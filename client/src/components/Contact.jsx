@@ -3,7 +3,7 @@ import Divider from './Divider'
 
 function Contact() {
   return (
-    <section id="contact" className="section-padding bg-(--bg-primary)">
+    <section id="contact" className="section-padding bg-(--bg-secondary)">
       <h2 className="section-heading">Contact Us</h2>
       <Divider />
 

@@ -4,7 +4,7 @@ import Divider from './Divider'
 
 function Facilities() {
   return (
-    <section id="facilities" className="section-padding bg-white">
+    <section id="facilities" className="section-padding bg-(--bg-secondary)">
       <h2 className="section-heading">Our Facilities</h2>
       <Divider />
 
@@ -22,7 +22,7 @@ function Facilities() {
               />
             </div>
 
-            <div className="p-6 bg-white">
+            <div className="p-6 bg-(--bg-primary)">
               <h3 className="text-xl font-bold text-(--primary-accent) mb-2">
                 {facility.title}
               </h3>

@@ -10,7 +10,7 @@ function Faculty() {
 
                 <Divider />
 
-                <div className="flex flex-wrap justify-center items-center gap-8">
+                <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
                     {faculties.map((faculty, index) => (
                         <div
                             key={index}
