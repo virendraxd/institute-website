@@ -30,9 +30,9 @@ function Results() {
 
     const avgMarks = totalStudents > 0
       ? students.reduce(
-          (sum, student) => sum + parseFloat(student.marks),
-          0
-        ) / totalStudents
+        (sum, student) => sum + parseFloat(student.marks),
+        0
+      ) / totalStudents
       : 0;
 
     const distinctions = students.filter(
@@ -76,39 +76,57 @@ function Results() {
       <Divider />
 
       {/* Filter Controls */}
-      <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
-        <div className="flex items-center gap-3 bg-white px-4 py-2 rounded-2xl shadow-sm border border-gray-100 w-full sm:w-auto">
-          <label className="text-gray-500 font-medium whitespace-nowrap text-sm">Batch:</label>
-          <select
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-            className="bg-transparent focus:outline-none font-bold text-(--primary-accent) cursor-pointer w-full"
-          >
-            {Object.keys(results).map((year) => (
-              <option key={year} value={year}>{year}</option>
-            ))}
-          </select>
+      <div className="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-4 mt-4 sm:mt-12">
+        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 hover:border-(--secondary-accent) transition-all w-full sm:w-auto">
+          <label className="text-gray-500 font-medium whitespace-nowrap text-sm">
+            Batch:
+          </label>
+
+          <div className="relative flex-1">
+            <select
+              value={year}
+              onChange={(e) => setYear(e.target.value)}
+              className="appearance-none pl-2 pr-6 bg-transparent w-full font-bold text-(--primary-accent) focus:outline-none cursor-pointer"
+            >
+              {Object.keys(results).map((year) => (
+                <option key={year} value={year}>{year}</option>
+              ))}
+            </select>
+
+            <span className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+              ▼
+            </span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3 bg-white px-4 py-2 rounded-2xl shadow-sm border border-gray-100 w-full sm:w-auto">
-          <label className="text-gray-500 font-medium whitespace-nowrap text-sm">Class:</label>
-          <select
-            value={selectedClass}
-            onChange={(e) => setSelectedClass(e.target.value)}
-            className="bg-transparent focus:outline-none font-bold text-(--primary-accent) cursor-pointer w-full"
-          >
-            <option value="10th">Class 10</option>
-            <option value="12th">Class 12</option>
-          </select>
+        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 hover:border-(--secondary-accent) transition-all w-full sm:w-auto">
+          <label className="text-gray-500 font-medium whitespace-nowrap text-sm">
+            Class:
+          </label>
+
+          <div className="relative flex-1">
+            <select
+              value={selectedClass}
+              onChange={(e) => setSelectedClass(e.target.value)}
+              className="appearance-none pl-2 pr-6 bg-transparent w-full font-bold text-(--primary-accent) focus:outline-none cursor-pointer"
+            >
+              <option value="10th">Class 10</option>
+              <option value="12th">Class 12</option>
+            </select>
+
+            <span className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+              ▼
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Student Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
+      <div className="grid grid-cols-2 mt-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-8">
         {sortedStudents.map((student) => (
           <div
             key={student.image}
-            className="shadow-sm bg-white overflow-hidden border rounded-xl border-(--secondary-accent)"
+            className="shadow-sm bg-(--bg-primary) overflow-hidden border rounded-xl border-gray-100"
           >
             <div className="relative overflow-hidden aspect-square">
               <img
@@ -135,7 +153,7 @@ function Results() {
       </div>
 
       {/* Stats Section */}
-      <div 
+      <div
         key={`${year}-${selectedClass}`}
         className="mt-20 px-2 py-8 sm:p-20 lg:p-10"
       >
