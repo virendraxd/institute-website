@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Divider from './Divider'
 import { faculties } from '../data/faculty'
 
 function Faculty() {
+    const [currentFaculty, setCurrentFaculty] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
+    const faculty = faculties[currentFaculty];
+
+    useEffect(() => {
+        if (isPaused) return;
+
+        const interval = setInterval(() => {
+            setCurrentFaculty((prev) => (prev + 1) % faculties.length);
+
+        }, 6000);
+
+        return () => clearInterval(interval);
+    }, [isPaused, faculty.length]);
+
     return (
         <>
             <section className="section-padding" id="faculty">
@@ -10,40 +25,59 @@ function Faculty() {
 
                 <Divider />
 
-                <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
-                    {faculties.map((faculty, index) => (
-                        <div
-                            key={index}
-                            className="bg-(--bg-secondary) w-full max-w-72 rounded-2xl overflow-hidden shadow-sm border border-gray-100"
-                        >
-                            <img
-                                src={faculty.image}
-                                alt={faculty.name}
-                                className="w-full h-84 object-cover"
-                            />
+                <div
+                    className="grid sm:grid-cols-2 gap-8 mt-12 items-center justify-center min-h-125 hover:cursor-pointer"
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
+                    <div className="overflow-hidden rounded-3xl xl:w-md xl:mx-auto">
+                        <img
+                            key={faculty.image}
+                            src={faculty.image}
+                            alt={faculty.name}
+                            className="w-72 sm:w-full  h-90 sm:h-125 object-cover animate-fade"
+                        />
+                    </div>
 
-                            <div className="px-3 py-4">
-                                <h3 className="text-2xl font-bold text-(--primary-accent)">
-                                    {faculty.name}
-                                </h3>
+                    <div
+                        key={faculty.name}
+                        className="animate-slide-left"
+                    >
+                        <p className="text-(--secondary-accent) font-bold uppercase tracking-widest">
+                            {faculty.subject}
+                        </p>
 
-                                <p className="font-semibold text-(--secondary-accent)">
-                                    {faculty.subject}
-                                </p>
+                        <h3 className="text-4xl md:text-5xl font-black text-(--primary-accent) mt-2">
+                            {faculty.name}
+                        </h3>
 
-                                <p className="text-gray-600 mt-2">
-                                    {faculty.designation}
-                                </p>
+                        <p className="text-xl text-gray-600 mt-4">
+                            {faculty.designation}
+                        </p>
 
-                                <p className="text-gray-600">
-                                    Experience: {faculty.experience}
-                                </p>
+                        <div className="space-y-3 mt-8">
+                            <p>
+                                <strong>Experience:</strong> {faculty.experience}
+                            </p>
 
-                                <p className="text-gray-600">
-                                    {faculty.qualification}
-                                </p>
-                            </div>
+                            <p><strong>Qualification:</strong> {faculty.qualification}
+                            </p>
                         </div>
+                    </div>
+                </div>
+
+                <div className="flex justify-center gap-3 mt-8">
+                    {faculties.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentFaculty(index)}
+                            className={`h-3 w-3 rounded-full transition-all cursor-pointer
+                                ${currentFaculty === index
+                                    ? "bg-gray-300/80 w-8"
+                                    : "bg-gray-200"
+                                }`
+                            }
+                        />
                     ))}
                 </div>
             </section>
