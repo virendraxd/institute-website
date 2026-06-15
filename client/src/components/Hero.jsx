@@ -79,7 +79,7 @@ function Hero({ openModal }) {
             >
               <img
                 src={slideImages[index]}
-                alt=""
+                alt="hero-image"
                 className="absolute inset-0 w-full h-full  object-cover animate-hero-image"
               />
 
