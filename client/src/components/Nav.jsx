@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { navLinks } from '../data/navLinks.js'
-import Logo from '../../public/knight_academy-logo.png'
+import Logo from '/knight_academy-logo.png'
 
 function Nav({ openModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

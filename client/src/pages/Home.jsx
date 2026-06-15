@@ -35,7 +35,7 @@ function Home() {
                 openModal={openModal}
             />
 
-            <div className="pt-14.5 md:pt-18.5 lg:pt-18">
+            <div className="pt-14.5 md:pt-18.5">
                 <Annoucement
                     openModal={openModal}
                 />
