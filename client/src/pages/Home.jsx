@@ -30,7 +30,7 @@ function Home() {
     };
 
     return (
-        <>
+        <div id="home">
 
             <Nav
                 openModal={openModal}
@@ -92,7 +92,7 @@ function Home() {
                 modalType={modalType}
                 selectedCourse={selectedCourse}
             />
-        </>
+        </div>
     )
 }
 export default Home

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { navLinks } from '../data/navLinks.js'
 import Logo from '/knight_academy-logo.png'
+import { scrollToSection } from '../utils/scrollToSection'
 
 function Nav({ openModal }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ function Nav({ openModal }) {
       >
 
         {/* Logo */}
-        <div className="flex items-center gap-1 sm:gap-3  text-(--primary-accent) text-shadow-2xs font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
+        <div onClick={() => scrollToSection("#home")} className="cursor-pointer flex items-center gap-1 sm:gap-3  text-(--primary-accent) text-shadow-2xs font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
           <img
             src={Logo}
             alt="Knight Academy Logo"
