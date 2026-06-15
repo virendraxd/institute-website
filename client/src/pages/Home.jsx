@@ -14,6 +14,7 @@ import Annoucement from '../components/Annoucement'
 import Reveal from '../components/Reveal'
 import FloatingBtn from '../components/FloatingBtn'
 import EnquiryModal from '../components/EnquiryModal'
+import Faculty from '../components/Faculty';
 import '../styles/Home.css'
 
 function Home() {
@@ -61,6 +62,10 @@ function Home() {
 
             <Reveal>
                 <Results />
+            </Reveal>
+
+            <Reveal>
+                <Faculty />
             </Reveal>
 
             <Reveal>

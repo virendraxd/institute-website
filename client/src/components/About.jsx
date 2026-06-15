@@ -34,7 +34,7 @@ function About() {
 
             <div className="flex justify-center items-center">
               <img
-                src={instituteData[0].image} alt="teacher-image"
+                src={instituteData[0].image} alt="institute-image"
                 className="rounded-2xl w-auto h-auto max-w-full  lg:h-64 lg:w-124 shadow-xl mt-8 lg:mt-0 border-2 border-(--secondary-accent)"
               />
             </div>
