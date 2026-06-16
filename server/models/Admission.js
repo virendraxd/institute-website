@@ -23,7 +23,9 @@ const admissionSchema = new mongoose.Schema(
 
         course: {
             type: String,
-            required: true,
+            required: function () {
+                return this.formType !== "enquiry";
+            },
         },
 
         school: {

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { scrollToSection } from '../utils/scrollToSection'
 import { courses } from '../data/institute.js'
 import Divider from './Divider'
@@ -60,15 +61,17 @@ function Courses({ openModal }) {
 
       {/* Course Modal */}
       {
-        selectedCourse && (
+        selectedCourse && createPortal(
           <div className="
             fixed inset-0
             bg-black/60
             backdrop-blur-sm
-            z-50
+            z-999
             flex items-center justify-center
             p-4
-          ">
+          "
+            onClick={() => setSelectedCourse(null)}
+          >
             <div className="
               bg-white
               rounded-3xl
@@ -76,20 +79,24 @@ function Courses({ openModal }) {
               max-w-2xl
               w-full
               relative
-            ">
+              max-h-[90vh]
+              overflow-y-auto
+            "
+              onClick={(e) => e.stopPropagation()}
+            >
               <button
                 onClick={() => setSelectedCourse(null)}
-                className="absolute top-4 right-4 cursor-pointer"
+                className="absolute top-4 right-4 cursor-pointer text-2xl text-gray-500 hover:text-black"
               >
                 ✕
               </button>
 
               {/* Main Content */}
-              <h2 className="flex justify-center font-(family-name:--font-amethysta) text-3xl sm:text-4xl mb-4">
+              <h2 className="flex justify-center font-(family-name:--font-amethysta) text-3xl sm:text-4xl mb-4 text-(--primary-accent)">
                 {selectedCourse.title}
               </h2>
 
-              <p className="text-gray-500 mb-6">
+              <p className="text-gray-500 mb-6 text-center">
                 {selectedCourse.target}
               </p>
 
@@ -102,10 +109,11 @@ function Courses({ openModal }) {
                       Subjects Covered
                     </h3>
 
-                    <ul className="mb-6 sm:text-base">
+                    <ul className="mb-6 sm:text-base space-y-1">
                       {selectedCourse.subjects.map(subject => (
-                        <li key={subject}>
-                          • {subject}
+                        <li key={subject} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-(--secondary-accent) rounded-full"></span>
+                          {subject}
                         </li>
                       ))}
                     </ul>
@@ -128,10 +136,11 @@ function Courses({ openModal }) {
                       Course Features
                     </h3>
 
-                    <ul className="mb-6 sm:text-base">
+                    <ul className="mb-6 sm:text-base space-y-1">
                       {selectedCourse.features?.map(feature => (
-                        <li key={feature}>
-                          ✓ {feature}
+                        <li key={feature} className="flex items-center gap-2">
+                          <span className="text-(--secondary-accent) font-bold">✓</span>
+                          {feature}
                         </li>
                       ))}
                     </ul>
@@ -142,10 +151,11 @@ function Courses({ openModal }) {
                       Batch Timings
                     </h3>
 
-                    <ul className="mb-6 sm:text-base">
+                    <ul className="mb-6 sm:text-base space-y-1">
                       {selectedCourse.batchTiming.map((timing) => (
-                        <li key={timing}>
-                          • {timing}
+                        <li key={timing} className="flex items-center gap-2">
+                          <span className="w-1.5 h-1.5 bg-(--secondary-accent) rounded-full"></span>
+                          {timing}
                         </li>
                       ))}
                     </ul>
@@ -179,7 +189,7 @@ function Courses({ openModal }) {
 
                 <button
                   onClick={() => {
-                    openModal("demo")
+                    openModal("demo", selectedCourse)
                     setSelectedCourse(null)
                   }
                   }
@@ -200,7 +210,8 @@ function Courses({ openModal }) {
                 </button>
               </div>
             </div>
-          </div>
+          </div>,
+          document.body
         )
       }
     </section >

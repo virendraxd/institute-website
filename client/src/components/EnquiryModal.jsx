@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { createPortal } from "react-dom";
 
 function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
-    if (!isOpen) return null;
-
     const [formData, setFormData] = useState({
         name: "",
         phone: "",
@@ -28,6 +27,8 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
             }));
         }
     }, [selectedCourse, isOpen]);
+
+    if (!isOpen) return null;
 
     const getTitle = () => {
         switch (modalType) {
@@ -60,8 +61,8 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
         }
 
         // Phone validation (exactly 10 digits)
-        const phoneRegex = /^[0-9]{10}$/;
-        if (!phoneRegex.test(formData.phone)) {
+        const phone = formData.phone.replace(/\D/g, "");
+        if (phone.length !== 10) {
             newErrors.phone = "Phone number must be exactly 10 digits";
         }
 
@@ -147,12 +148,12 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
 
     const getInputClass = (fieldName) => {
         return `w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 transition-all ${errors[fieldName]
-                ? "border-red-500 focus:ring-red-200 bg-red-50"
-                : "border-gray-300 focus:ring-(--primary-accent)/20 focus:border-(--primary-accent)"
+            ? "border-red-500 focus:ring-red-200 bg-red-50"
+            : "border-gray-300 focus:ring-(--primary-accent)/20 focus:border-(--primary-accent)"
             }`;
     };
 
-    return (
+    return createPortal(
         <div
             className="fixed inset-0 z-999 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
             onClick={onClose}
@@ -422,7 +423,8 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                     </button>
                 </form>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
 

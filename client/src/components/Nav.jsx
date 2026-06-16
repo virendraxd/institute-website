@@ -44,8 +44,6 @@ function Nav({ openModal }) {
               >
                 {link.name}
               </a>
-
-              {/* <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-(--secondary-accent) transition-all duration-300 group-hover:w-full"></span> */}
             </li>
           ))}
 
@@ -95,7 +93,9 @@ function Nav({ openModal }) {
               </li>
             ))}
             <li>
-              <button className="w-full bg-(--secondary-accent) text-white py-3 px-2 rounded-xl font-bold">
+              <button
+                className="w-full bg-(--secondary-accent) text-white py-3 px-2 rounded-xl font-bold"
+                onClick={() => openModal("enquiry")}>
                 Admission Enquiry
               </button>
             </li>
