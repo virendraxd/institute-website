@@ -244,3 +244,21 @@
 .paused {
   animation-play-state: paused;
 }
+
+@keyframes testimonialsScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-testimonials {
+  animation: testimonialsScroll linear infinite;
+}
+
+.animate-testimonials:hover {
+  animation-play-state: paused;
+}
