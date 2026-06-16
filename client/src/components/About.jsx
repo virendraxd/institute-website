@@ -3,7 +3,6 @@ import { useInView } from 'react-intersection-observer'
 import { useRef } from 'react'
 import { instituteData } from '../data/institute.js'
 import Divider from './Divider'
-// import teacherImage from '../assets/teachers/teacher1.png'
 import AnimatedCounter from "../components/AnimatedCounter";
 
 function About() {

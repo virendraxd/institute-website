@@ -1,5 +1,5 @@
 import React from 'react'
-import { testimonials } from '../data/institute.js'
+import { testimonials } from '../data/testimonials.js'
 import Divider from './Divider'
 import { useState, useEffect } from 'react'
 

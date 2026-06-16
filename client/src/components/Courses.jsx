@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { createPortal } from 'react-dom'
 import { scrollToSection } from '../utils/scrollToSection'
-import { courses } from '../data/institute.js'
+import { courses } from '../data/courses.js'
 import Divider from './Divider'
 
 function Courses({ openModal }) {

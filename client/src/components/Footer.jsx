@@ -1,8 +1,9 @@
 import React from 'react'
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { scrollToSection } from '../utils/scrollToSection';
-import { courses, instituteData } from '../data/institute';
+import { instituteData } from '../data/institute';
 import { socialLinks } from '../data/socialinks';
+import { courses } from '../data/courses';
 
 function Footer({ openModal }) {
   return (

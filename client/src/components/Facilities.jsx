@@ -1,5 +1,5 @@
 import React from 'react'
-import { facilities } from '../data/institute.js'
+import { facilities } from '../data/facilities.js'
 import Divider from './Divider'
 
 function Facilities() {

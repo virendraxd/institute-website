@@ -1,5 +1,5 @@
 import React from 'react'
-import { announcemet } from '../data/institute'
+import { announcemet } from '../data/announcement.js'
 
 function Annoucement({ openModal }) {
     return (

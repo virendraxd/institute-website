@@ -1,5 +1,5 @@
 import React from 'react'
-import { features } from '../data/institute.js'
+import { features } from '../data/features.js'
 import Divider from './Divider'
 
 function WhyChooseUs() {
