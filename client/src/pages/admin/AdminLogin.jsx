@@ -54,6 +54,7 @@ function AdminLogin() {
                             type="text"
                             placeholder="Username"
                             value={username}
+                            maxLength={50}
                             onChange={(e) => setUsername(e.target.value)}
                             className="border rounded-lg px-4 py-2 bg-[#0A0A0A] border-gray-600 text-white w-full"
                         />
@@ -62,6 +63,7 @@ function AdminLogin() {
                             type="text"
                             placeholder="Password"
                             value={password}
+                            maxLength={100}
                             onChange={(e) => setPassword(e.target.value)}
                             className="border rounded-lg px-4 py-2 bg-[#0A0A0A] border-gray-600 text-white w-full"
                         />

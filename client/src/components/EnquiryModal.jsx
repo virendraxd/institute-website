@@ -205,6 +205,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                         name="name"
                                         placeholder="Student Name *"
                                         required
+                                        maxLength={100}
                                         value={formData.name}
                                         onChange={handleChange}
                                         className={getInputClass("name")}
@@ -218,6 +219,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                         name="phone"
                                         placeholder="Phone Number (10 digits) *"
                                         required
+                                        maxLength={15}
                                         value={formData.phone}
                                         onChange={handleChange}
                                         className={getInputClass("phone")}
@@ -235,6 +237,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                         type="text"
                                         name="parentName"
                                         placeholder="Parent Name"
+                                        maxLength={100}
                                         value={formData.parentName}
                                         onChange={handleChange}
                                         className={getInputClass("parentName")}
@@ -246,6 +249,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                         type="email"
                                         name="email"
                                         placeholder="Email Address"
+                                        maxLength={100}
                                         value={formData.email}
                                         onChange={handleChange}
                                         className={getInputClass("email")}
@@ -296,6 +300,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                 type="text"
                                 name="school"
                                 placeholder="Current School"
+                                maxLength={100}
                                 value={formData.school}
                                 onChange={handleChange}
                                 className={getInputClass("school")}
@@ -325,6 +330,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                     placeholder="Student Name *"
                                     name="name"
                                     required
+                                    maxLength={100}
                                     value={formData.name}
                                     onChange={handleChange}
                                     className={getInputClass("name")}
@@ -338,6 +344,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                     name="phone"
                                     placeholder="Phone Number *"
                                     required
+                                    maxLength={15}
                                     value={formData.phone}
                                     onChange={handleChange}
                                     className={getInputClass("phone")}
@@ -351,6 +358,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                     name="email"
                                     placeholder="Email Address *"
                                     required
+                                    maxLength={100}
                                     value={formData.email}
                                     onChange={handleChange}
                                     className={getInputClass("email")}
@@ -364,6 +372,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                     name="message"
                                     placeholder="How can we help you? *"
                                     required
+                                    maxLength={1000}
                                     value={formData.message}
                                     onChange={handleChange}
                                     className={getInputClass("message")}
@@ -383,6 +392,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                                     rows="3"
                                     name="message"
                                     placeholder="Any specific requirements or questions?"
+                                    maxLength={1000}
                                     value={formData.message}
                                     onChange={handleChange}
                                     className={getInputClass("message")}
