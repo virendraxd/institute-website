@@ -39,7 +39,7 @@ function AdminLogin() {
 
             localStorage.setItem("token", data.token);
             toast.success("Welcome back!");
-            navigate("/admin/leads");
+            navigate("/admin/dashboard");
         } catch (err) {
             toast.error(err.message || "Login failed");
         } finally {

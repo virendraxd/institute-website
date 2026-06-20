@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import '../../styles/Home.css'
 import '../../App.css'
 import Navbar from '../../components/admin/Header'
+import Stats from '../../components/admin/Stats';
 
-function Leads() {
+function Dashboard() {
     const [leads, setLeads] = useState([])
     const [selectedLead, setSelectedLead] = useState(null)
 
@@ -107,8 +108,11 @@ function Leads() {
         <>
             <Navbar />
 
+            <h2 className='section-heading mt-2'>Lead Dashboard</h2>
+            
+            <Stats />
+
             <section className='px-2 py-8 sm:px-12 sm:y-16 bg-(--bg-secondary)'>
-                <h2 className='section-heading'>Leads</h2>
 
                 <div className="flex gap-6 flex-col xl:flex-row mt-4">
                     <div className="flex flex-col gap-6 ">
@@ -273,4 +277,4 @@ function Leads() {
     )
 }
 
-export default Leads
+export default Dashboard

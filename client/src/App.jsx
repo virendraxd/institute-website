@@ -4,7 +4,7 @@ import './App.css'
 
 import Home from './pages/Home'
 import AdminLogin from './pages/admin/AdminLogin'
-import Leads from './pages/admin/Leads'
+import Dashboard from './pages/admin/Dashboard'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import { Toaster } from "sonner";
 
@@ -21,10 +21,10 @@ function App() {
           <Route path="/admin" element={<AdminLogin />} />
 
           <Route
-            path="/admin/leads"
+            path="/admin/dashboard"
             element={
               <ProtectedRoute>
-                <Leads />
+                <Dashboard />
               </ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
