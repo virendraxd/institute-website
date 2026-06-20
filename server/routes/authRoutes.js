@@ -17,7 +17,7 @@ router.post("/login", (req, res) => {
             { expiresIn: "12h" }
         );
 
-        res.json({ token });
+        return res.json({ token });
     }
 
     return res.status(401).json({

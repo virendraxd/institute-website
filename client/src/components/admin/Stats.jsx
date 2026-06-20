@@ -22,15 +22,15 @@ function Stats() {
 
 
     return (
-        <section className="section-padding ">
-            <div className="grid grid-cols-2 gap-4 ">
+        <section>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {stats.map((stat) => (
                     <div
                         key={stat.label}
-                        className="border rounded-xl p-6"
+                        className="border rounded-xl p-4 font-medium"
                     >
-                        <p className="text-sm">{stat.label}</p>
-                        <h3 className="text-3xl font-bold">
+                        <p className="text-sm lg:text-lg">{stat.label}</p>
+                        <h3 className="text-3xl lg:text-4xl font-bold">
                             {stat.value}
                         </h3>
                     </div>
