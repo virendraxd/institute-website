@@ -6,13 +6,15 @@ import Home from './pages/Home'
 import AdminLogin from './pages/admin/AdminLogin'
 import Leads from './pages/admin/Leads'
 import ProtectedRoute from './components/admin/ProtectedRoute'
-
+import { Toaster } from "sonner";
 
 function App() {
 
   return (
     <>
       <BrowserRouter>
+        <Toaster richColors />
+        
         <Routes>
           <Route path="/" element={<Home />} />
 
