@@ -7,6 +7,7 @@ import AdminLogin from './pages/admin/AdminLogin'
 import Dashboard from './pages/admin/Dashboard'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import { Toaster } from "sonner";
+import AdminLayout from './pages/admin/AdminLayout'
 
 function App() {
 
@@ -14,17 +15,23 @@ function App() {
     <>
       <BrowserRouter>
         <Toaster richColors />
-        
+
         <Routes>
           <Route path="/" element={<Home />} />
 
-          <Route path="/admin" element={<AdminLogin />} />
+          <Route path="/admin" element={
+            <AdminLayout>
+              <AdminLogin />
+            </AdminLayout>
+          } />
 
           <Route
             path="/admin/dashboard"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <AdminLayout>
+                  <Dashboard />
+                </AdminLayout>
               </ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
