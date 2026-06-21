@@ -6,6 +6,15 @@ import Navbar from '../../components/admin/Header'
 import Stats from '../../components/admin/Stats';
 import LeadSidebar from '../../components/admin/LeadSidebar';
 
+const formatDate = (dateString) => {
+    if (!dateString) return "-";
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString('en-US', { month: "short" }).toUpperCase();
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+};
+
 function Dashboard() {
     const [leads, setLeads] = useState([])
     const [selectedLead, setSelectedLead] = useState(null)
@@ -127,7 +136,9 @@ function Dashboard() {
                 <div className="flex-1 min-w-0 w-full ">
                     <h2 className="text-2xl font-bold text-center my-4 lg:text-left">Lead Dashboard</h2>
 
-                    <Stats />
+                    <Stats
+                        leads={leads}
+                    />
 
                     <section>
                         <div className="flex gap-6 flex-col mt-4">
@@ -167,7 +178,7 @@ function Dashboard() {
                                                     </span>
                                                 </td>
 
-                                                <td className="px-3 sm:px-6 py-2 sm:py-4">{new Date(lead.createdAt).toLocaleDateString()}</td>
+                                                <td className="px-3 sm:px-6 py-2 sm:py-4">{formatDate(lead.createdAt)}</td>
 
                                                 <td className="px-3 sm:px-6 py-2 sm:py-4 text-center">
                                                     <button

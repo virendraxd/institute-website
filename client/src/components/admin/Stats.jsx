@@ -1,25 +1,30 @@
 import React from 'react'
 
-function Stats() {
+function Stats({ leads }) {
     const stats = [
         {
             label: "Total Leads",
-            value: 125,
+            value: leads.length,
         },
         {
             label: "New",
-            value: 38,
+            value: leads.filter(
+                lead => lead.status === "new"
+            ).length,
         },
         {
             label: "Contacted",
-            value: 57,
+            value: leads.filter(
+                lead => lead.status === "contacted"
+            ).length,
         },
         {
             label: "Admitted",
-            value: 30,
+            value: leads.filter(
+                lead => lead.status === "admitted"
+            ).length,
         },
     ];
-
 
     return (
         <section>
@@ -27,7 +32,7 @@ function Stats() {
                 {stats.map((stat) => (
                     <div
                         key={stat.label}
-                        className="border rounded-xl p-4 font-medium"
+                        className="border rounded-xl p-4 font-medium bg-linear-0 from-blue-50 to-blue-200"
                     >
                         <p className="text-sm lg:text-lg">{stat.label}</p>
                         <h3 className="text-3xl lg:text-4xl font-bold">
