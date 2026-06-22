@@ -26,15 +26,14 @@
   --bg-color: var(--bg-card);
   --font-default: var(--font-body);
 
-  --admin-border: hsl(220, 10%, 46%);
+  --admin-border: hsl(220, 13%, 54%);
   --admin-label: hsl(214, 95%, 93%);
 
-  --gradient-from: hsl(214, 100%, 97%);
-  --gradient-to: hsl(214, 95%, 93%);
 }
 
 .admin-dark {
-  --bg-page: hsl(210, 40%, 6%);
+  --bg-page: hsl(220, 12%, 10%);
+  --bg-card: hsl(223, 8%, 17%);
   background-color: var(--bg-page);
 
   --brand-primary: hsl(0, 0%, 95%);
@@ -42,9 +41,6 @@
 
   --admin-border: hsl(220, 13%, 54%);
   --admin-label: hsl(214, 95%, 76%);
-
-  --gradient-from: hsl(217, 65%, 16%);
-  --gradient-to: hsl(217, 65%, 24%);
 }
 
 html {

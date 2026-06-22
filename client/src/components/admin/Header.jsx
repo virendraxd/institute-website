@@ -23,7 +23,7 @@ function Header() {
 
     return (
         <>
-            <header className="flex px-4 sm:px-8 py-2 border-b border-(--admin-border) justify-between text-(--brand-primary)">
+            <header className="flex px-4 sm:px-8 py-2 bg-(--bg-page) border-b border-(--admin-border) justify-between text-(--brand-primary)">
                 <div className="flex flex-row gap-4">
                     <ul>
                         <li>

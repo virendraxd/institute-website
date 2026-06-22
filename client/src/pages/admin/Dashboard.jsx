@@ -15,7 +15,7 @@ const formatDate = (dateString) => {
     return `${day} ${month} ${year}`;
 };
 
-function Dashboard() {
+function Dashboard({ darkmode }) {
     const [leads, setLeads] = useState([])
     const [selectedLead, setSelectedLead] = useState(null)
 
@@ -182,7 +182,12 @@ function Dashboard() {
 
                                                 <td className="px-3 sm:px-6 py-2 sm:py-4 text-center">
                                                     <button
-                                                        className="py-3 w-24 rounded-lg bg-(--brand-primary) text-(--text-inverse) hover:text-whi te/80 cursor-pointer hover:bg-(--brand-primary-hover ) hover:scale"
+                                                        className={`py-3 w-24 rounded-lg text-(--text-inverse) hover:text-(--bg-card)/60 cursor-pointer 
+                                                            ${darkmode
+                                                                ? "bg-(--bg-card)"
+                                                                : "bg-(--brand-primary)"
+                                                            }
+                                                             `}
                                                         onClick={() => {
                                                             setSelectedLead(lead);
                                                             changeInnerText(lead);

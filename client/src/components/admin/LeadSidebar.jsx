@@ -5,7 +5,7 @@ function LeadSidebar({ selectedLead, leadFields, noLeadSelected, updateStatus, d
         <aside className={noLeadSelected
             ? "hidden lg:flex w-full xl:w-96 shrink-0 my-5  flex-col justify-center sm:justify-start items-center align-middle"
             : "flex fixed inset-0 z-50 bg-black/50 p-4 justify-center items-center lg:static lg:bg-transparent lg:p-0 lg:flex w-full xl:w-96 shrink-0 flex-col lg:justify-start align-middle"}>
-            <div className="bg-(--bg-page) px-4 sm:px-6 py-6 sm:py-8 w-full sm:max-w-md border border-(--admin-border) shadow-sm relative">
+            <div className="bg-(--bg-card) px-4 sm:px-6 py-6 sm:py-8 w-full sm:max-w-md border border-(--admin-border) shadow-sm relative">
 
                 {/* Close Button for Mobile */}
                 <button
@@ -17,7 +17,7 @@ function LeadSidebar({ selectedLead, leadFields, noLeadSelected, updateStatus, d
 
                 <h3 className="text-center font-bold text-xl text-(--brand-primary)">Student Info</h3>
 
-                <table className="bg-(--bg-page) w-full shadow-sm mt-4">
+                <table className="bg-(--bg-card) w-full shadow-sm mt-4">
                     <thead className="bg-(--admin-label) border-b-2 border-gray-400">
                         <tr>
                             <th colSpan="2" className="text-left px-4 py-2 font-bold">

@@ -55,7 +55,7 @@ function AdminLogin() {
 
                 <h1 className="text-(--brand-primary) font-semibold font-(family-name:--font-heading) text-2xl sm:text-4xl text-center mb-12">Admin Login</h1>
 
-                <div className="flex flex-col justify-between items-center sm:w-110 gap-10 sm:gap-12 border-2 rounded-2xl border-blue-950 bg-black px-6 sm:px-8 py-10 sm:py-12">
+                <div className="flex flex-col justify-between items-center sm:w-110 gap-10 sm:gap-12 border-2 rounded-2xl border-(--admin-border) bg-black px-6 sm:px-8 py-10 sm:py-12">
 
                     <form className="space-y-6"
                         onSubmit={handleLogin}>
