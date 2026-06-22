@@ -120,7 +120,7 @@ function Dashboard() {
         <>
             <Navbar />
 
-            <main className="flex flex-col lg:flex-row px-4 lg:py-6 w-full overflow-hidden bg-(--bg-card) gap-6">
+            <main className="flex flex-col lg:flex-row px-4 lg:py-6 w-full overflow-hidden bg-(--bg-page) gap-6">
                 {/* Sidebar */}
                 <div className=" top-6">
                     <LeadSidebar
@@ -134,7 +134,7 @@ function Dashboard() {
                 </div>
 
                 <div className="flex-1 min-w-0 w-full ">
-                    <h2 className="text-2xl font-bold text-center my-4 lg:text-left">Lead Dashboard</h2>
+                    <h2 className="text-2xl font-bold text-center my-4 lg:text-left text-(--brand-primary)">Lead Dashboard</h2>
 
                     <Stats
                         leads={leads}
@@ -143,9 +143,9 @@ function Dashboard() {
                     <section>
                         <div className="flex gap-6 flex-col mt-4">
                             {/* Table */}
-                            <div className="flex-1 overflow-x-auto border-2 rounded-xl border-gray-200 shadow-sm">
-                                <table border="1" className="bg-(--bg-color) w-full border-collapse">
-                                    <thead className="bg-blue-100 border-b-2 border-gray-400">
+                            <div className="flex-1 overflow-x-auto border rounded-xl border-(--admin-border) shadow-sm">
+                                <table border="1" className="bg-(--bg-page) w-full border-collapse">
+                                    <thead className="bg-(--admin-label) border-b border-(--admin-border)">
                                         <tr>
                                             <th className="px-3 sm:px-6 py-2 sm:py-4 text-left font-semibold">Sno.</th>
                                             <th className="px-3 sm:px-6 py-2 sm:py-4 text-left font-semibold">Name</th>
@@ -161,7 +161,7 @@ function Dashboard() {
                                         {leads.slice(0, visibleLeads).map((lead) => (
                                             <tr
                                                 key={lead._id}
-                                                className="border-b border-gray-200 hover:bg-gray-300/30 transition-colors"
+                                                className="border-b border-(--admin-border) text-(--brand-primary) hover:bg-gray-300/30 transition-colors"
                                             >
                                                 <td className="px-3 sm:px-6 py-2 sm:py-4">{leads.indexOf(lead) + 1}</td>
                                                 <td className="px-3 sm:px-6 py-2 sm:py-4 font-extrabold">{lead.name}</td>
@@ -182,7 +182,7 @@ function Dashboard() {
 
                                                 <td className="px-3 sm:px-6 py-2 sm:py-4 text-center">
                                                     <button
-                                                        className="py-3 w-24 rounded-lg bg-(--brand-primary) text-white hover:text-white/80 cursor-pointer hover:bg-(--brand-primary-hover) hover:scale"
+                                                        className="py-3 w-24 rounded-lg bg-(--brand-primary) text-(--text-inverse) hover:text-whi te/80 cursor-pointer hover:bg-(--brand-primary-hover ) hover:scale"
                                                         onClick={() => {
                                                             setSelectedLead(lead);
                                                             changeInnerText(lead);
@@ -205,7 +205,7 @@ function Dashboard() {
                                 {visibleLeads < leads.length && (
                                     <button
                                         onClick={() => setVisibleLeads(visibleLeads + 10)}
-                                        className="px-3 sm:px-6 py-2 sm:py-4 rounded-lg bg-(--brand-primary) text-white cursor-pointer"
+                                        className="px-3 sm:px-6 py-2 sm:py-4 rounded-lg bg-(--brand-primary) border-(--admin-border) text-(--text-inverse) cursor-pointer"
                                     >
                                         Show More
                                     </button>
@@ -214,7 +214,7 @@ function Dashboard() {
                                 {visibleLeads > 10 && (
                                     <button
                                         onClick={() => setVisibleLeads(10)}
-                                        className="px-3 sm:px-6 py-2 sm:py-4 rounded-lg border cursor-pointer "
+                                        className="px-3 sm:px-6 py-2 sm:py-4 rounded-lg border border-(--admin-border) text-(--brand-primary) cursor-pointer "
                                     >
                                         Show Less
                                     </button>

@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useTheme } from "../ThemeProvider";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 function Header() {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ function Header() {
 
     return (
         <>
-            <header className="flex px-4 sm:px-8 py-2 border-b border-gray-200 justify-between">
+            <header className="flex px-4 sm:px-8 py-2 border-b border-(--admin-border) justify-between text-(--brand-primary)">
                 <div className="flex flex-row gap-4">
                     <ul>
                         <li>
@@ -45,8 +46,11 @@ function Header() {
 
                 </div>
 
-                <button onClick={toggleTheme}>
-                    {darkMode ? "☀️" : "🌙"}
+                <button
+                    onClick={toggleTheme}
+                    className="cursor-pointer"
+                >
+                    {darkMode ? <FaMoon /> : <FaSun />}
                 </button>
             </header>
         </>

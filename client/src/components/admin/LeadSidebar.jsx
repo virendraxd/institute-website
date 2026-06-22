@@ -5,20 +5,20 @@ function LeadSidebar({ selectedLead, leadFields, noLeadSelected, updateStatus, d
         <aside className={noLeadSelected
             ? "hidden lg:flex w-full xl:w-96 shrink-0 my-5  flex-col justify-center sm:justify-start items-center align-middle"
             : "flex fixed inset-0 z-50 bg-black/50 p-4 justify-center items-center lg:static lg:bg-transparent lg:p-0 lg:flex w-full xl:w-96 shrink-0 flex-col lg:justify-start align-middle"}>
-            <div className="bg-(--bg-color) px-4 sm:px-6 py-6 sm:py-8 w-full sm:max-w-md border-2 border-gray-200 shadow-sm relative">
+            <div className="bg-(--bg-page) px-4 sm:px-6 py-6 sm:py-8 w-full sm:max-w-md border border-(--admin-border) shadow-sm relative">
 
                 {/* Close Button for Mobile */}
                 <button
                     onClick={closeSidebar}
-                    className="lg:hidden absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold cursor-pointer"
+                    className="lg:hidden absolute top-4 right-4 text-(--admin-border) hover:text-gray-800 text-xl font-bold cursor-pointer"
                 >
                     ✕
                 </button>
 
-                <h3 className="text-center font-bold text-xl">Student Info</h3>
+                <h3 className="text-center font-bold text-xl text-(--brand-primary)">Student Info</h3>
 
-                <table className="bg-(--bg-color) w-full shadow-sm mt-4">
-                    <thead className="bg-blue-100 border-b-2 border-gray-400">
+                <table className="bg-(--bg-page) w-full shadow-sm mt-4">
+                    <thead className="bg-(--admin-label) border-b-2 border-gray-400">
                         <tr>
                             <th colSpan="2" className="text-left px-4 py-2 font-bold">
                                 {selectedLead?.name || "Select a Lead First"}
@@ -32,8 +32,8 @@ function LeadSidebar({ selectedLead, leadFields, noLeadSelected, updateStatus, d
                     >
                         {leadFields.map(([label, value]) => (
                             <tr key={label}>
-                                <th className="px-4 py-2 text-left font-semibold">{label}</th>
-                                <td className="text-left" >{value || "-"}</td>
+                                <th className="px-4 py-2 text-left font-semibold text-(--brand-primary)">{label}</th>
+                                <td className="text-left text-(--brand-primary)/80" >{value || "-"}</td>
                             </tr>
                         ))}
 

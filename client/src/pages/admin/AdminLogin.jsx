@@ -48,12 +48,12 @@ function AdminLogin() {
     };
 
     return (
-        <div>
+        <div className="h-dvh">
             <Navbar />
 
             <section className="section-padding bg-(--bg-page) flex flex-col items-center justify-center">
 
-                <h1 className="section-heading text-5xl sm:text-6xl text-center mb-12">Admin Login</h1>
+                <h1 className="text-(--brand-primary) font-semibold font-(family-name:--font-heading) text-2xl sm:text-4xl text-center mb-12">Admin Login</h1>
 
                 <div className="flex flex-col justify-between items-center sm:w-110 gap-10 sm:gap-12 border-2 rounded-2xl border-blue-950 bg-black px-6 sm:px-8 py-10 sm:py-12">
 
@@ -81,11 +81,13 @@ function AdminLogin() {
                         />
 
                         <button
-                            disabled={loading || isDisabled}
                             type="submit"
-                            className={`border-2 rounded-lg px-4 py-2 bg-(--brand-primary) border-gray-600 text-white w-full
-                            ${isDisabled ? "cursor-not-allowed text-white/80" : "hover:text-white cursor-pointer"}
-                            `}
+                            disabled={loading || isDisabled}
+                            className={`block mx-auto border-2 rounded-lg px-4 py-2 bg-(--brand-primary) border-(--admin-border) w-32
+                                ${isDisabled
+                                    ? "cursor-not-allowed text-(--text-inverse)/60"
+                                    : "text-(--text-inverse) cursor-pointer"}
+                                `}
                         >
                             {loading ? "Logging in..." : "Log in"}
                         </button>

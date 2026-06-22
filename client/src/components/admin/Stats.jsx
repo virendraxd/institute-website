@@ -32,10 +32,10 @@ function Stats({ leads }) {
                 {stats.map((stat) => (
                     <div
                         key={stat.label}
-                        className="border rounded-xl p-4 font-medium bg-linear-0 from-blue-50 to-blue-200"
+                        className="border rounded-xl p-4 font-medium bg-linear-0 from-(--gradient-from) to-(--gradient-to)"
                     >
-                        <p className="text-sm lg:text-lg">{stat.label}</p>
-                        <h3 className="text-3xl lg:text-4xl font-bold">
+                        <p className="text-sm lg:text-lg text-(--brand-primary)/85">{stat.label}</p>
+                        <h3 className="text-3xl lg:text-4xl font-bold text-(--brand-primary)/95">
                             {stat.value}
                         </h3>
                     </div>

@@ -6,7 +6,7 @@
 :root {
   --brand-primary: hsl(212, 100%, 14%);
   --brand-primary-hover: hsl(212, 100%, 18%);
-  
+
   --brand-secondary: hsl(42, 90%, 58%);
   --brand-primary-hover: hsl(42, 90%, 48%);
 
@@ -25,12 +25,26 @@
 
   --bg-color: var(--bg-card);
   --font-default: var(--font-body);
+
+  --admin-border: hsl(220, 10%, 46%);
+  --admin-label: hsl(214, 95%, 93%);
+
+  --gradient-from: hsl(214, 100%, 97%);
+  --gradient-to: hsl(214, 95%, 93%);
 }
 
 .admin-dark {
   --bg-page: hsl(210, 40%, 6%);
-
   background-color: var(--bg-page);
+
+  --brand-primary: hsl(0, 0%, 95%);
+  --text-inverse: hsl(0, 0%, 10%);
+
+  --admin-border: hsl(220, 13%, 54%);
+  --admin-label: hsl(214, 95%, 76%);
+
+  --gradient-from: hsl(217, 65%, 16%);
+  --gradient-to: hsl(217, 65%, 24%);
 }
 
 html {
