@@ -12,7 +12,7 @@ function About() {
       <section id="about" className="section-padding">
         <h2 className="section-heading flex flex-wrap justify-center gap-2">
           About
-          <span className='text-(--secondary-accent)'>
+          <span className='text-(--brand-secondary)'>
             {instituteData[0].name}
           </span>
         </h2>
@@ -22,7 +22,7 @@ function About() {
         <div className="flex flex-col mt-12 gap-12 lg:gap-18 ">
           <div className="flex flex-col md:flex-row justify-between gap-4 lg:gap-12 md:h-96  ">
             <div className="flex flex-col justify-center gap-2 md:max-w-96 lg:max-w-md xl:max-w-148"> 
-              <p className="font-(family-name:--font-amethysta) text-3xl xl:text-4xl leading-tight text-(--primary-accent)">
+              <p className="font-(family-name:--font-title) text-3xl xl:text-4xl leading-tight text-(--brand-primary)">
                 {instituteData[0].tagline}
               </p>
 
@@ -34,31 +34,31 @@ function About() {
             <div className="flex justify-center items-center">
               <img
                 src={instituteData[0].image} alt="institute-image"
-                className="rounded-2xl w-auto h-auto max-w-full  lg:h-64 lg:w-124 shadow-xl mt-8 lg:mt-0 border-2 border-(--secondary-accent)"
+                className="rounded-2xl w-auto h-auto max-w-full  lg:h-64 lg:w-124 shadow-xl mt-8 lg:mt-0 border-2 border-(--brand-secondary)"
               />
             </div>
           </div>
 
           <div>
             <div className="stats-grid grid grid-cols-2 sm:grid-cols-3 gap-6 pt-4 text-center">
-              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
-                <h3 className="text-4xl sm:text-5xl font-bold text-(--primary-accent)">
+              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-page) border border-gray-100 rounded-2xl items-center">
+                <h3 className="text-4xl sm:text-5xl font-bold text-(--brand-primary)">
                   <AnimatedCounter end={15} suffix="+" />
                 </h3>
 
                 <p className="text-sm md:text-base lg:text-lg text-gray-500 uppercase tracking-wider font-semibold">Years Experience</p>
               </div>
 
-              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
-                <h3 className="text-4xl sm:text-5xl font-bold text-(--primary-accent)">
+              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-page) border border-gray-100 rounded-2xl items-center">
+                <h3 className="text-4xl sm:text-5xl font-bold text-(--brand-primary)">
                   <AnimatedCounter end={1200} duration={1} suffix="+" />
                 </h3>
 
                 <p className="text-sm md:text-base lg:text-lg text-gray-500 uppercase tracking-wider font-semibold">Students Trained</p>
               </div>
 
-              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-secondary) border border-gray-100 rounded-2xl items-center">
-                <h3 className="text-4xl sm:text-5xl font-bold text-(--primary-accent)">
+              <div className="shadow-md stat-card p-4 md:p-6 bg-(--bg-page) border border-gray-100 rounded-2xl items-center">
+                <h3 className="text-4xl sm:text-5xl font-bold text-(--brand-primary)">
                   <AnimatedCounter end={200} suffix="+" />
                 </h3>
 

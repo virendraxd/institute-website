@@ -70,14 +70,14 @@ function Results() {
   const resultStats = calcStats();
 
   return (
-    <section id="results" className="section-padding bg-(--bg-secondary)">
+    <section id="results" className="section-padding bg-(--bg-page)">
       <h2 className="section-heading">Results & Achievements</h2>
 
       <Divider />
 
       {/* Filter Controls */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-4 mt-4 sm:mt-12">
-        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 hover:border-(--secondary-accent) transition-all w-full sm:w-auto">
+        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 hover:border-(--brand-secondary) transition-all w-full sm:w-auto">
           <label className="text-gray-500 font-medium whitespace-nowrap text-sm">
             Batch:
           </label>
@@ -86,7 +86,7 @@ function Results() {
             <select
               value={year}
               onChange={(e) => setYear(e.target.value)}
-              className="appearance-none pl-2 pr-6 bg-transparent w-full font-bold text-(--primary-accent) focus:outline-none cursor-pointer"
+              className="appearance-none pl-2 pr-6 bg-transparent w-full font-bold text-(--brand-primary) focus:outline-none cursor-pointer"
             >
               {Object.keys(results).map((year) => (
                 <option key={year} value={year}>{year}</option>
@@ -99,7 +99,7 @@ function Results() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 hover:border-(--secondary-accent) transition-all w-full sm:w-auto">
+        <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-xl sm:rounded-2xl shadow-sm border border-gray-100 hover:border-(--brand-secondary) transition-all w-full sm:w-auto">
           <label className="text-gray-500 font-medium whitespace-nowrap text-sm">
             Class:
           </label>
@@ -108,7 +108,7 @@ function Results() {
             <select
               value={selectedClass}
               onChange={(e) => setSelectedClass(e.target.value)}
-              className="appearance-none pl-2 pr-6 bg-transparent w-full font-bold text-(--primary-accent) focus:outline-none cursor-pointer"
+              className="appearance-none pl-2 pr-6 bg-transparent w-full font-bold text-(--brand-primary) focus:outline-none cursor-pointer"
             >
               <option value="10th">Class 10</option>
               <option value="12th">Class 12</option>
@@ -126,7 +126,7 @@ function Results() {
         {sortedStudents.map((student) => (
           <div
             key={student.image}
-            className="shadow-sm bg-(--bg-primary) overflow-hidden border rounded-xl border-gray-100"
+            className="shadow-sm bg-(--bg-card) overflow-hidden border rounded-xl border-gray-100"
           >
             <div className="relative overflow-hidden aspect-square">
               <img
@@ -144,7 +144,7 @@ function Results() {
               <h3 className="text-sm md:text-base font-bold text-gray-800 mb-1 truncate opacity-[0.6]">
                 {student.name}
               </h3>
-              <p className="text-2xl md:text-3xl font-black text-(--primary-accent)">
+              <p className="text-2xl md:text-3xl font-black text-(--brand-primary)">
                 {student.marks}
               </p>
             </div>
@@ -157,14 +157,14 @@ function Results() {
         key={`${year}-${selectedClass}`}
         className="mt-20 px-2 py-8 sm:p-20 lg:p-10"
       >
-        <h3 className="text-center opacity-[0.87] font-bold text-2xl sm:text-3xl md:text-4xl text-(--primary-accent) mb-12 uppercase">
+        <h3 className="text-center opacity-[0.87] font-bold text-2xl sm:text-3xl md:text-4xl text-(--brand-primary) mb-12 uppercase">
           Batch {year} - Class {selectedClass} Overview
         </h3>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
           {resultStats.map((stat, i) => (
-            <div key={i} className="shadow-md bg-(--bg-primary) p-2 sm:p-4 md:p-6 rounded-2xl sm:rounded-3xl border border-gray-100 text-center hover:border-(--secondary-accent) transition-colors group flex flex-col justify-center">
-              <h3 className="text-4xl md:text-5xl font-black text-(--primary-accent) mb-2 ">
+            <div key={i} className="shadow-md bg-(--bg-card) p-2 sm:p-4 md:p-6 rounded-2xl sm:rounded-3xl border border-gray-100 text-center hover:border-(--brand-secondary) transition-colors group flex flex-col justify-center">
+              <h3 className="text-4xl md:text-5xl font-black text-(--brand-primary) mb-2 ">
                 <AnimateCounter end={Number(stat.value)} suffix={stat.suffix} />
               </h3>
 

@@ -43,11 +43,11 @@ function Faculty() {
                         key={faculty.name}
                         className="animate-slide-left"
                     >
-                        <p className="text-(--secondary-accent) font-bold uppercase tracking-widest">
+                        <p className="text-(--brand-secondary) font-bold uppercase tracking-widest">
                             {faculty.subject}
                         </p>
 
-                        <h3 className="text-4xl md:text-5xl font-black text-(--primary-accent) mt-2">
+                        <h3 className="text-4xl md:text-5xl font-black text-(--brand-primary) mt-2">
                             {faculty.name}
                         </h3>
 

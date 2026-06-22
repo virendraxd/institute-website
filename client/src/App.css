@@ -4,32 +4,33 @@
 @import "tailwindcss";
 
 :root {
-  --primary-accent: hsl(212, 100%, 14%);
-  --secondary-accent: hsl(42, 90%, 58%);
+  --brand-primary: hsl(212, 100%, 14%);
+  --brand-primary-hover: hsl(212, 100%, 18%);
+  
+  --brand-secondary: hsl(42, 90%, 58%);
+  --brand-primary-hover: hsl(42, 90%, 48%);
 
-  --primary-light: hsl(212, 100%, 18%);
+  --bg-card: hsl(0, 0%, 100%);
+  --bg-page: hsl(210, 40%, 98%);
 
-  --bg-primary: hsl(0, 0%, 100%);
-  --bg-secondary: hsl(210, 40%, 98%);
-
-  --text-primary: hsl(212, 100%, 14%);
-  --text-on-dark: hsl(0, 0%, 100%);
+  --text-title: hsl(212, 100%, 14%);
+  --text-inverse: hsl(0, 0%, 100%);
 
   --btn-primary: hsl(42, 90%, 58%);
-  --btn-secondary: hsl(42, 90%, 48%);
+  --btn-primary-hover: hsl(42, 90%, 48%);
 
-  --font-amethysta: "Amethysta", serif;
-  --font-montserrat: "Montserrat", sans-serif;
-  --font-roboto: "Roboto", sans-serif;
+  --font-title: "Amethysta", serif;
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Roboto", sans-serif;
 
-  --bg-color: var(--bg-primary);
-  --font-default: var(--font-roboto);
+  --bg-color: var(--bg-card);
+  --font-default: var(--font-body);
 }
 
 .admin-dark {
-  --bg-secondary: hsl(210, 40%, 6%);
+  --bg-page: hsl(210, 40%, 6%);
 
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-page);
 }
 
 html {
@@ -39,5 +40,5 @@ html {
 body {
   font-family: var(--font-default);
   background-color: var(--bg-color);
-  color: var(--text-primary);
+  color: var(--text-title);
 }

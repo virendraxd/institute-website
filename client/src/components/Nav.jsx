@@ -9,7 +9,7 @@ function Nav({ openModal }) {
   return (
     <header className="fixed inset-x-0 top-0 z-100 w-full">
       <nav
-        className=" bg-(--bg-secondary)
+        className=" bg-(--bg-page)
             w-full  
             px-4 md:px-20 lg:px-16 xl:px-20 py-2 
             flex justify-between items-center
@@ -17,21 +17,21 @@ function Nav({ openModal }) {
       >
 
         {/* Logo */}
-        <div onClick={() => scrollToSection("#home")} className="cursor-pointer flex items-center gap-1 sm:gap-3  text-(--primary-accent) text-shadow-2xs font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
+        <div onClick={() => scrollToSection("#home")} className="cursor-pointer flex items-center gap-1 sm:gap-3  text-(--brand-primary) text-shadow-2xs font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
           <img
             src={Logo}
             alt="Knight Academy Logo"
             className="h-10 w-10 md:h-14 md:w-14 object-contain drop-shadow-sm"
           />
 
-          <h1 className="text-(--primary-accent) font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
+          <h1 className="text-(--brand-primary) font-bold text-2xl md:text-4xl font-montserrat tracking-tight">
             Knight
-            <span className="text-(--secondary-accent)"> Academy</span>
+            <span className="text-(--brand-secondary)"> Academy</span>
           </h1>
         </div>
 
         {/* Desktop Links */}
-        <ul className="hidden lg:flex items-center gap-8 lg:gap-6 text-(--text-primary) font-medium">
+        <ul className="hidden lg:flex items-center gap-8 lg:gap-6 text-(--text-title) font-medium">
 
           {navLinks.map((link) => (
             <li
@@ -40,7 +40,7 @@ function Nav({ openModal }) {
             >
               <a
                 href={link.href}
-                className="hover:text-(--secondary-accent) transition-colors duration-200 text-shadow-xs"
+                className="hover:text-(--brand-secondary) transition-colors duration-200 text-shadow-xs"
               >
                 {link.name}
               </a>
@@ -49,7 +49,7 @@ function Nav({ openModal }) {
 
           <li>
             <button
-              className="bg-(--primary-accent) border border-(--primary-accent)/30 text-(--text-on-dark) font-semibold cursor-pointer  px-6 py-2.5 rounded-xl transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
+              className="bg-(--brand-primary) border border-(--brand-primary)/30 text-(--text-inverse) font-semibold cursor-pointer  px-6 py-2.5 rounded-xl transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
               onClick={() => openModal("admission")}
             >
               Admissions
@@ -59,7 +59,7 @@ function Nav({ openModal }) {
 
         {/* Mobile Hamburger */}
         <button
-          className="lg:hidden text-(--text-primary) p-1 focus:outline-none"
+          className="lg:hidden text-(--text-title) p-1 focus:outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,7 +75,7 @@ function Nav({ openModal }) {
         <div
           className={`
               absolute top-full right-1 mt-1 lg:hidden 
-              bg-(--primary-accent)/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6
+              bg-(--brand-primary)/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6
               transition-all duration-300 origin-top max-w-xl
               ${isMenuOpen ? 'scale-y-100 opacity-100 visible' : 'scale-y-0 opacity-0 invisible'}
             `}
@@ -94,7 +94,7 @@ function Nav({ openModal }) {
             ))}
             <li>
               <button
-                className="w-full bg-(--secondary-accent) text-white py-3 px-2 rounded-xl font-bold"
+                className="w-full bg-(--brand-secondary) text-white py-3 px-2 rounded-xl font-bold"
                 onClick={() => openModal("enquiry")}>
                 Admission Enquiry
               </button>

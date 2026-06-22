@@ -149,7 +149,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
     const getInputClass = (fieldName) => {
         return `w-full border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 transition-all ${errors[fieldName]
             ? "border-red-500 focus:ring-red-200 bg-red-50"
-            : "border-gray-300 focus:ring-(--primary-accent)/20 focus:border-(--primary-accent)"
+            : "border-gray-300 focus:ring-(--brand-primary)/20 focus:border-(--brand-primary)"
             }`;
     };
 
@@ -177,7 +177,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
 
                 {/* Header */}
                 <div className="flex justify-between items-center mb-8">
-                    <h2 className="text-3xl font-bold text-(--primary-accent)">
+                    <h2 className="text-3xl font-bold text-(--brand-primary)">
                         {getTitle()}
                     </h2>
 
@@ -407,7 +407,7 @@ function EnquiryModal({ isOpen, onClose, modalType, selectedCourse, }) {
                             w-full
                             py-4
                             rounded-xl
-                            bg-(--primary-accent)
+                            bg-(--brand-primary)
                             text-white
                             font-bold
                             text-lg

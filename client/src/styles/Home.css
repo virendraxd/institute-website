@@ -41,13 +41,13 @@
 }
 
 .section-heading {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-heading);
   font-weight: bold;
   font-size: 1.5rem;
   display: flex;
   justify-content: center;
   text-align: center;
-  color: var(--primary-accent);
+  color: var(--brand-primary);
   opacity: 0.87;
 }
 

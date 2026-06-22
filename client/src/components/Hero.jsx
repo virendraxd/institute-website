@@ -85,14 +85,14 @@ function Hero({ openModal }) {
 
               <div className="absolute inset-0 bg-black/25 flex items-center align-middle justify-center z-10">
                 <div className="flex items-center flex-col text-center">
-                  <p className="text-(--text-on-dark) font-(family-name:--font-amethysta) 
+                  <p className="text-(--text-inverse) font-(family-name:--font-title) 
                     text-4xl/[0.95] sm:text-6xl md:text-6xl lg:text-8xl   
                     max-w-75 sm:max-w-110 md:max-w-160 lg:max-w-190 animate-title"
                   >
                     {slide.title}
                   </p>
 
-                  <p className="text-(--text-on-dark)/80 font-(family-name:--font-roboto) 
+                  <p className="text-(--text-inverse)/80 font-(family-name:--font-body) 
                     text-base md:text-xl  
                     max-w-60 sm:max-w-75 md:max-w-100 lg:max-w-150
                     my-6 animate-subtitle"
@@ -102,7 +102,7 @@ function Hero({ openModal }) {
 
                   <div className="flex gap-6 mt-8 items-center justify-center animate-buttons">
                     <button
-                      className="bg-(--primary-accent) cursor-pointer text-(--text-on-dark) px-6 sm:px-8 border border-(--secondary-accent) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
+                      className="bg-(--brand-primary) cursor-pointer text-(--text-inverse) px-6 sm:px-8 border border-(--brand-secondary) hover:bg-(--brand-primary-hover) shadow-lg hover:shadow-xl
                     rounded-lg transition-colors duration-300 text-shadow-lg
                     font-semibold lg:font-bold 
                       text-sm lg:text-lg
@@ -113,7 +113,7 @@ function Hero({ openModal }) {
                       Apply Now
                     </button>
 
-                    <button className="bg-transparent cursor-pointer text-(--text-on-dark) px-6 sm:px-8 border border-(--secondary-accent) hover:bg-(--primary-light) shadow-lg hover:shadow-xl
+                    <button className="bg-transparent cursor-pointer text-(--text-inverse) px-6 sm:px-8 border border-(--brand-secondary) hover:bg-(--brand-primary-hover) shadow-lg hover:shadow-xl
                     rounded-lg transition-colors duration-300 text-shadow-lg
                     font-semibold lg:font-bold 
                       text-sm lg:text-lg

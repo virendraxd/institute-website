@@ -6,7 +6,7 @@ function Annoucement({ openModal }) {
         <>
             <section
                 id="announcement-bar"
-                className="flex flex-row bg-(--primary-accent) items-center justify-start md:justify-center p-1.5 sm:p-2 font-semibold border-b border-(--bg-secondary)/38"
+                className="flex flex-row bg-(--brand-primary) items-center justify-start md:justify-center p-1.5 sm:p-2 font-semibold border-b border-(--bg-page)/38"
             >
                 <div
                     id="announcement-track"
@@ -26,7 +26,7 @@ function Annoucement({ openModal }) {
                         </span>
 
                         <button
-                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-sm tracking-wider"
+                            className="text-(--brand-secondary) uppercase hover:text-(--btn-primary-hover) cursor-pointer text-sm tracking-wider"
                             onClick={() => openModal("apply")}
                         >
                             Apply Now
@@ -38,16 +38,16 @@ function Annoucement({ openModal }) {
                         id="announcement-item-2"
                         className="flex items-center gap-4 pr-8"
                     >
-                        <span className="text-(--text-primary)/90 text-sm tracking-widest font-medium">
+                        <span className="text-(--text-title)/90 text-sm tracking-widest font-medium">
                             {announcemet.toUpperCase()}
                         </span>
 
-                        <span className="text-(--secondary-accent)">
+                        <span className="text-(--brand-secondary)">
                             &bull;
                         </span>
 
                         <button
-                            className="text-(--secondary-accent) uppercase hover:text-(--btn-secondary) cursor-pointer text-sm tracking-wider"
+                            className="text-(--brand-secondary) uppercase hover:text-(--btn-primary-hover) cursor-pointer text-sm tracking-wider"
                             onClick={() => openModal("apply")}
                         >
                             Apply Now

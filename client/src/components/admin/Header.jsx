@@ -26,7 +26,7 @@ function Header() {
                 <div className="flex flex-row gap-4">
                     <ul>
                         <li>
-                            <Link to="/" className="font-semibold hover:text-(--secondary-accent) hover:text-shadow-sm" >Home</Link>
+                            <Link to="/" className="font-semibold hover:text-(--brand-secondary) hover:text-shadow-sm" >Home</Link>
                         </li>
                     </ul>
 

@@ -9,7 +9,7 @@ function Courses({ openModal }) {
   const [selectedCourse, setSelectedCourse] = useState(null);
 
   return (
-    <section id="courses" className="section-padding bg-(--bg-primary)">
+    <section id="courses" className="section-padding bg-(--bg-card)">
       <h2 className="section-heading">Courses Offered</h2>
       <Divider />
 
@@ -19,15 +19,15 @@ function Courses({ openModal }) {
             <article
               id={course.id}
               key={course.title}
-              className="bg-(--bg-secondary) rounded-3xl px-4 py-6 sm:px-8 sm:py-10 md:px-6 md:py-8 lg:px-4 lg:py-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
+              className="bg-(--bg-page) rounded-3xl px-4 py-6 sm:px-8 sm:py-10 md:px-6 md:py-8 lg:px-4 lg:py-6 shadow-sm border border-gray-100 flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
             >
               <div className="">
-                <h3 className="text-[28px] font-semibold text-center sm:text-3xl lg:text-4xl mb-6 font-(family-name:--font-amethysta) text-(--primary-accent)" >
+                <h3 className="text-[28px] font-semibold text-center sm:text-3xl lg:text-4xl mb-6 font-(family-name:--font-title) text-(--brand-primary)" >
                   {course.title}
                 </h3>
 
                 <p className="text-base sm:text-xl text-gray-400 mb-5 flex items-center gap-2 ">
-                  <span className="w-6 h-0.5 bg-(--secondary-accent)"></span>
+                  <span className="w-6 h-0.5 bg-(--brand-secondary)"></span>
                   {course.target}
                 </p>
 
@@ -35,7 +35,7 @@ function Courses({ openModal }) {
                   {
                     course.subjects.map(subject => (
                       <li key={subject} className="text-lg/[0.1]  font-semibold md:text-xl text-gray-600 flex items-center gap-3 ">
-                        <svg className="w-5 h-5 text-(--secondary-accent)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="w-5 h-5 text-(--brand-secondary)" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
                         {subject}
@@ -50,7 +50,7 @@ function Courses({ openModal }) {
               </div>
 
               <button
-                className="mt-8 w-full md:w-max px-8 py-3 bg-(--primary-accent) text-white rounded-xl font-bold cursor-pointer transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
+                className="mt-8 w-full md:w-max px-8 py-3 bg-(--brand-primary) text-white rounded-xl font-bold cursor-pointer transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
                 onClick={() => setSelectedCourse(course)}>
                 Learn More
               </button>
@@ -92,7 +92,7 @@ function Courses({ openModal }) {
               </button>
 
               {/* Main Content */}
-              <h2 className="flex justify-center font-(family-name:--font-amethysta) text-3xl sm:text-4xl mb-4 text-(--primary-accent)">
+              <h2 className="flex justify-center font-(family-name:--font-title) text-3xl sm:text-4xl mb-4 text-(--brand-primary)">
                 {selectedCourse.title}
               </h2>
 
@@ -112,7 +112,7 @@ function Courses({ openModal }) {
                     <ul className="mb-6 sm:text-base space-y-1">
                       {selectedCourse.subjects.map(subject => (
                         <li key={subject} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 bg-(--secondary-accent) rounded-full"></span>
+                          <span className="w-1.5 h-1.5 bg-(--brand-secondary) rounded-full"></span>
                           {subject}
                         </li>
                       ))}
@@ -139,7 +139,7 @@ function Courses({ openModal }) {
                     <ul className="mb-6 sm:text-base space-y-1">
                       {selectedCourse.features?.map(feature => (
                         <li key={feature} className="flex items-center gap-2">
-                          <span className="text-(--secondary-accent) font-bold">✓</span>
+                          <span className="text-(--brand-secondary) font-bold">✓</span>
                           {feature}
                         </li>
                       ))}
@@ -154,7 +154,7 @@ function Courses({ openModal }) {
                     <ul className="mb-6 sm:text-base space-y-1">
                       {selectedCourse.batchTiming.map((timing) => (
                         <li key={timing} className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 bg-(--secondary-accent) rounded-full"></span>
+                          <span className="w-1.5 h-1.5 bg-(--brand-secondary) rounded-full"></span>
                           {timing}
                         </li>
                       ))}
@@ -172,7 +172,7 @@ function Courses({ openModal }) {
                     setSelectedCourse(null);
                   }}
                   className="
-                bg-(--primary-accent)
+                bg-(--brand-primary)
                 text-white
                 px-6 py-3
                 rounded-xl
@@ -194,13 +194,13 @@ function Courses({ openModal }) {
                   }
                   }
                   className="
-                    border-2 border-(--primary-accent)
-                    text-(--primary-accent)
+                    border-2 border-(--brand-primary)
+                    text-(--brand-primary)
                     px-6 py-3
                     rounded-xl
                     w-full
                     font-semibold
-                    hover:bg-(--primary-accent)
+                    hover:bg-(--brand-primary)
                     hover:text-white
                     transition-all
                     cursor-pointer

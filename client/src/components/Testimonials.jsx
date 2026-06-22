@@ -25,7 +25,7 @@ function Testimonials() {
   }, [isPaused]);
 
   return (
-    <section className="px-0 py-16 md:py-24 lg:py-32  bg-(--bg-primary)">
+    <section className="px-0 py-16 md:py-24 lg:py-32  bg-(--bg-card)">
       <h2 className="section-heading">Testimonials</h2>
 
       <Divider />
@@ -47,7 +47,7 @@ function Testimonials() {
           ).map((testimonial, index) => (
             <div
               key={index}
-              className=" w-[320px] sm:w-95 lg:w-105 bg-(--bg-secondary) p-8 rounded-2xl shadow-md flex flex-col justify-between shrink-0"
+              className=" w-[320px] sm:w-95 lg:w-105 bg-(--bg-page) p-8 rounded-2xl shadow-md flex flex-col justify-between shrink-0"
             >
               <div>
                 <div className="flex gap-1 mb-4">
@@ -73,11 +73,11 @@ function Testimonials() {
               </div>
 
               <div>
-                <h4 className="font-bold text-(--primary-accent)">
+                <h4 className="font-bold text-(--brand-primary)">
                   {testimonial.name}
                 </h4>
 
-                <p className="text-sm text-(--text-primary)/75">
+                <p className="text-sm text-(--text-title)/75">
                   {testimonial.role}
                 </p>
               </div>

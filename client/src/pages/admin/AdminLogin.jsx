@@ -51,7 +51,7 @@ function AdminLogin() {
         <div>
             <Navbar />
 
-            <section className="section-padding bg-(--bg-secondary) flex flex-col items-center justify-center">
+            <section className="section-padding bg-(--bg-page) flex flex-col items-center justify-center">
 
                 <h1 className="section-heading text-5xl sm:text-6xl text-center mb-12">Admin Login</h1>
 
@@ -83,7 +83,7 @@ function AdminLogin() {
                         <button
                             disabled={loading || isDisabled}
                             type="submit"
-                            className={`border-2 rounded-lg px-4 py-2 bg-(--primary-accent) border-gray-600 text-white w-full
+                            className={`border-2 rounded-lg px-4 py-2 bg-(--brand-primary) border-gray-600 text-white w-full
                             ${isDisabled ? "cursor-not-allowed text-white/80" : "hover:text-white cursor-pointer"}
                             `}
                         >

@@ -120,7 +120,7 @@ function Dashboard() {
         <>
             <Navbar />
 
-            <main className="flex flex-col lg:flex-row px-4 lg:py-6 w-full overflow-hidden bg-(--bg-primary) gap-6">
+            <main className="flex flex-col lg:flex-row px-4 lg:py-6 w-full overflow-hidden bg-(--bg-card) gap-6">
                 {/* Sidebar */}
                 <div className=" top-6">
                     <LeadSidebar
@@ -182,7 +182,7 @@ function Dashboard() {
 
                                                 <td className="px-3 sm:px-6 py-2 sm:py-4 text-center">
                                                     <button
-                                                        className="py-3 w-24 rounded-lg bg-(--primary-accent) text-white hover:text-white/80 cursor-pointer hover:bg-(--primary-light) hover:scale"
+                                                        className="py-3 w-24 rounded-lg bg-(--brand-primary) text-white hover:text-white/80 cursor-pointer hover:bg-(--brand-primary-hover) hover:scale"
                                                         onClick={() => {
                                                             setSelectedLead(lead);
                                                             changeInnerText(lead);
@@ -205,7 +205,7 @@ function Dashboard() {
                                 {visibleLeads < leads.length && (
                                     <button
                                         onClick={() => setVisibleLeads(visibleLeads + 10)}
-                                        className="px-3 sm:px-6 py-2 sm:py-4 rounded-lg bg-(--primary-accent) text-white cursor-pointer"
+                                        className="px-3 sm:px-6 py-2 sm:py-4 rounded-lg bg-(--brand-primary) text-white cursor-pointer"
                                     >
                                         Show More
                                     </button>
